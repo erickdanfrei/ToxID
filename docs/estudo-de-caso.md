@@ -22,7 +22,11 @@ Dividido em dois:
 • Outras condições: Atende desde trabalhadores rurais com pouca afinidade digital até técnicos. Exige rigor científico (nomes, taxonomia e fontes) para ganhar a confiança dos profissionais.
 
 2.4. Objetivo e proposta de valor  
+O ToxID é um aplicativo feito para identificar animais peçonhentos de forma rápida e segura, funcionando 100% offline. Ele ajuda qualquer pessoa na zona rural — seja a própria vítima, um colega ou um socorrista — a descobrir em segundos qual animal causou o acidente, qual o soro antiveneno correto e qual o hospital mais próximo.
 
+O grande benefício: Reduzir o tempo de pânico e a dúvida no momento mais crítico, transformando a angústia em uma resposta ágil e segura, mesmo sem sinal de internet. Ele não substitui o médico, mas age como uma ponte confiável até o atendimento.
+
+Para os profissionais (como bombeiros e equipes de zoonoses), funciona como uma ferramenta de consulta rápida e treino, com dados científicos confiáveis para dar mais segurança no atendimento à população.
 
 
 2.5. Personalidade, identidade e experiência  
