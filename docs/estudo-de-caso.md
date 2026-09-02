@@ -17,12 +17,20 @@
 Analise:
 • Palavras conceituais:
 Termos como Epidemiologia, peçonha, SAE,SAEsc, Gênero Lachesis, Butantan, SINAN  trazem um rigor mais técnico, sanitário e científico.Essa características impactarão na solução: Na arquitetura onde precisa atender necessidade de dois grupos. Para Técnicos e para trabalhadores rurais, onde os termos devem ser traduzidos para pessoas leigas sobre o assunto.
+
+
 • Personalidade da identidade:
 Definida como: “Rústica, de campo, mas séria”, funcionando como uma “bússola de sobrevivência”. Essa características impactarão na solução: Transmite solidez e utilidade prática. O produto deve evitar elementos supérfluos, animações complexas ou menus escondidos. A ideia de "bússola" exige uma navegação direta, indicando sempre o caminho imediato de ação (identificar e buscar socorro).
+
+
 • Tom da interface:
 Extremamente funcional e offline-first (não pode depender de internet no meio da mata). Botões grandes, fontes fortes, tempo de carregamento de imagem minimizado. Essa características impactarão na solução: Tipografia e Layout: Uso de fontes fortes, pesos em negrito e botões em formato de bloco (touch targets amplos) para facilitar o clique por pessoas com mãos sujas de terra, luvas de trabalho ou dedos trêmulos sob estresse. E na Performance Tecnológica: Exige execução leve em smartphones de entrada (Android 8.0+) e limite estrito do APK em 20MB. As imagens e ilustrações científicas vetorizadas precisam de otimização pesada (WebP/SVG) para garantir carregamento instantâneo.
+
+
 • Tom da experiência do usuário 
 Feita para o momento do susto. Tudo funciona 100% offline no meio da mata, e a resposta vem em até 3 toques na tela, trocando textos longos por imagens diretas (como "Tem chocalho?").
+
+
 • Forma como o aplicativo deseja ser lembrado 
 Como um "escudo digital". Transmite segurança ao usar apenas fotos oficiais confiáveis, respeitar a privacidade e direcionar a pessoa rápido ao hospital correto. 
 
