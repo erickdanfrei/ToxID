@@ -15,6 +15,8 @@
 
 2.5. Personalidade, identidade e experiência  
 Analise:
+
+
 • Palavras conceituais:
 Termos como Epidemiologia, peçonha, SAE,SAEsc, Gênero Lachesis, Butantan, SINAN  trazem um rigor mais técnico, sanitário e científico.Essa características impactarão na solução: Na arquitetura onde precisa atender necessidade de dois grupos. Para Técnicos e para trabalhadores rurais, onde os termos devem ser traduzidos para pessoas leigas sobre o assunto.
 
