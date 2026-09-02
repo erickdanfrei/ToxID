@@ -7,7 +7,19 @@
  
 
 2.3. Contexto de uso   
- 
+• Ambiente: Lavouras, matas e estradas rurais. Longe da cidade e de hospitais, com muita vegetação e sinal ruim.
+• Momento de uso: 
+Dividido em dois:
+* *Emergência:* Logo após um acidente, exigindo resposta imediata.
+* *Consulta/Treinamento:* Uso calmo por bombeiros e técnicos para estudo ou tirar dúvidas.
+
+• Condições do usuário:  Na emergência, a pessoa está com dor, medo ou em choque (geralmente um colega ou familiar). No modo técnico, o uso é calmo e focado em precisão.
+• Dispositivo:  Celulares básicos (Android 8.0 ou superior), muitas vezes com telas menores e desempenho limitado.
+• Conectividade: Nula ou instável no campo. Talvez seja preciso distribuir o APK via Bluetooth, já que nem sempre haverá acesso à loja de aplicativos.
+• Iluminação: Sol forte e direto do campo, gerando muito reflexo na tela.
+• Nível de atenção: Baixo e disperso na emergência; focado e sustentado no uso técnico.
+• Situação de urgência: Cenário crítico onde cada minuto conta para aplicar o soro correto. O fluxo de emergência deve ter no máximo 3 toques e 3 telas.
+• Outras condições: Atende desde trabalhadores rurais com pouca afinidade digital até técnicos. Exige rigor científico (nomes, taxonomia e fontes) para ganhar a confiança dos profissionais.
 
 2.4. Objetivo e proposta de valor  
 
