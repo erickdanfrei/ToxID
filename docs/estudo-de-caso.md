@@ -1,9 +1,30 @@
 #ToxID
 
 2.1. Problema  
+• Qual problema o aplicativo pretende ajudar a solucionar?
+
+O ToxID busca solucionar a dificuldade de identificar rapidamente um animal peçonhento durante uma emergência em áreas rurais, onde muitas vezes não há conexão com a internet. Esse problema é importante porque cada animal pode exigir um soro antiveneno específico, e uma identificação demorada ou incorreta pode dificultar o atendimento da vítima. Além disso, o aplicativo deve atender tanto pessoas sem conhecimento técnico, que podem estar sob estresse durante o acidente, quanto técnicos e bombeiros que precisam consultar informações confiáveis de forma rápida.
+
+• Por que esse problema é relevante?
+
+Esse problema é relevante porque acidentes com animais peçonhentos exigem uma identificação rápida e confiável para orientar o atendimento adequado. Em áreas rurais, a falta de internet e de conhecimento especializado pode dificultar esse processo e atrasar o atendimento.
+
+• Qual é a principal necessidade que a solução deverá atender?
+
+A principal necessidade é permitir a identificação rápida e confiável do animal peçonhento e orientar sobre o soro antiveneno adequado, mesmo sem conexão com a internet. O aplicativo deve ser fácil de usar, com perguntas visuais simples e poucas interações, principalmente porque pode ser utilizado durante uma emergência e sob estresse. Também deve oferecer informações técnicas para bombeiros e técnicos de zoonoses.
+
 
 
 2.2. Público e usuários  
+
+População rural e trabalhadores agrícolas: São os principais usuários em situações de emergência. Utilizariam o aplicativo quando ocorre um acidente e precisam identificar rapidamente o animal, mesmo sem saber seu nome. Por estarem sob estresse, precisam de um fluxo simples, visual e rápido que os oriente durante a situação.
+
+Bombeiros: Utilizam o aplicativo como uma ferramenta de consulta durante emergências e também para treinamento. Precisam de informações confiáveis sobre o animal, incluindo seu nome científico e taxonomia, para auxiliar na identificação e no atendimento da situação.
+
+Técnicos de zoonoses: Possuem um uso principalmente técnico e de consulta. Podem utilizar o aplicativo para treinamento e para obter informações rápidas e confiáveis sobre os animais, especialmente sobre suas características, nome científico e taxonomia.
+
+O ToxID deve atender tanto aos usuários que precisam de uma resposta rápida durante uma emergência quanto aos usuários que precisam de informações técnicas e confiáveis, adaptando a experiência a cada situação.
+
  
 
 2.3. Contexto de uso   
