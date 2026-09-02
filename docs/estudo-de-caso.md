@@ -41,24 +41,31 @@ Como um "escudo digital". Transmite segurança ao usar apenas fotos oficiais con
 2.6. Funcionalidades e características já definidas  
 
 Funcionalidade: Triagem rápida de emergência em até 3 toques
+
 Necessidade atendida: Atende à necessidade de resposta imediata no momento do acidente ou pânico, permitindo que o trabalhador rural identifique o tipo de animal peçonhento sem precisar navegar por menus complexos ou ler textos longos.
 
 Funcionalidade: Funcionamento 100% offline-first com assets e imagens embarcadas no aplicativo
+
 Necessidade atendida: Supre a falta de conectividade à internet em lavouras, matas e zonas rurais isoladas, garantindo que o app continue totalmente operacional onde os acidentes costumam acontecer.
 
 Funcionalidade: Mapeamento e geolocalização do hospital de referência mais próximo
+
 Necessidade atendida: Resolve a urgência de encontrar o local correto para aplicação do soro antiveneno específico (SAE/SAEsc), indicando a rota para socorro sem armazenar os dados de localização do usuário.
 
 Funcionalidade: Galeria de imagens com busca por características visuais (cor, forma e presença de chocalho)
+
 Necessidade atendida: Atende quem não conhece a biologia dos animais ou não sabe o nome da espécie, permitindo uma identificação intuitiva por comparação visual rápida.
 
 Funcionalidade: Exibição de nomes científicos, taxonomia e informações de soros
+
 Necessidade atendida: Atende à demanda técnica de profissionais da saúde, técnicos de zoonoses e bombeiros, conferindo credibilidade e servindo como ferramenta para treinamento e apoio em ocorrências.
 
 Funcionalidade: Modo escuro de alto contraste (preto e verde-musgo) com botões e fontes ampliados
+
 Necessidade atendida: Facilita a leitura e navegação sob sol forte em ambientes externos e garante usabilidade para trabalhadores que estejam usando luvas ou com as mãos sujas.
 
 Funcionalidade: Otimização de dados para limite de APK em até 20MB e uso de ilustrações científicas oficiais (Butantan/Funed)
+
 Necessidade atendida: Viabiliza o download e compartilhamento (via Bluetooth) em celulares básicos ou redes móveis fracas, além de garantir precisão técnica e segurança no diagnóstico sem o uso de fotos genéricas.
 
 
