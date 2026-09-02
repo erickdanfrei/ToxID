@@ -15,4 +15,4 @@ O ToxID é um aplicativo móvel (Android, Flutter) pensado para ajudar a identif
 Erick: Criação do repositório, gestão de colaboradores e pesquisa dos pontos 2.5 e 2.6.
 Felipe: Pesquisa dos pontos 2.7 e 2.8.
 Paula: Pesquisa dos pontos 2.1 e 2.2.
-Sara: Organização do repositório conforme a estrutura recomendada, redação do README e do CHANGELOG, e pesquisa dos pontos 3 e 4.
+Sara: Organização do repositório conforme a estrutura recomendada, redação do README e do CHANGELOG, e pesquisa dos pontos 2.3 e 2.4.
