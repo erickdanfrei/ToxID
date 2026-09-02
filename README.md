@@ -1,5 +1,5 @@
 # ToxID
-##Integrantes: 
+#Integrantes: 
 Erick Thalles Dantas Freire;
 Sara Jimena Barrera Mora;
 Paula Ximena Antonio Franco;
