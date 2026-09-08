@@ -22,7 +22,7 @@ Persona 2: Bombeira / Técnica de Zoonoses
 
 • Perfil/contexto: Sargento dos Bombeiros e inspetora municipal de zoonoses em um município do interior, com 10 anos de experiência em resgate de fauna e atendimento a acidentes. Possui alta instrução técnica, é metódica e usa um smartphone intermediário diariamente para consultar protocolos e coordenar operações em áreas rurais com sinal instável ou inexistente.
 
-• Objetivos: Identificar espécimes capturados ou envolvidos em acidentes com precisão taxonômica (gênero e espécie), confirmar o soro antiveneno exato (SAE ou SAEsc) e capacitar sua equipe com fontes institucionais confiáveis.
+• Objetivos: Identificar espécimes capturados ou envolvidos em acidentes com precisão taxonômica (gênero e espécie), confirmar o soro antiveneno exato  e capacitar sua equipe com fontes institucionais confiáveis.
 
 • Necessidades: Acesso 100% offline a fichas taxonômicas, ilustrações e fotos científicas oficiais (Instituto Butantan/Funed), indicação do nível de perigosidade e especificação clara do soro adequado.
 
