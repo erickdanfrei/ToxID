@@ -16,3 +16,9 @@ Erick: Criação do repositório, gestão de colaboradores e pesquisa dos pontos
 Felipe: Pesquisa dos pontos 2.7 e 2.8.
 Paula: Pesquisa dos pontos 2.1 e 2.2.
 Sara: Organização do repositório conforme a estrutura recomendada, redação do README e do CHANGELOG, e pesquisa dos pontos 2.3 e 2.4.
+
+Erick: Criação dos arquivos pesquisa.md, benchmark.md e personas.md e desenvolvimento da parte da pesquisa.md.
+Davi: Soluções 1 e 2 do benchmark.
+Felipe: Solução 3 de benchmark.
+Sara: 1 persona.
+Paula: 2 persona.
