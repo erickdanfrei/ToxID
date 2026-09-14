@@ -33,5 +33,5 @@ O ToxID é um aplicativo móvel (Android, Flutter) pensado para ajudar a identif
 * **Erick:** Criação do arquivo `requisitos.md` e desenvolvimento da seção 1 (Funcionalidades).
 * **Davi:** Estruturação do CRUD no arquivo `requisitos.md`.
 * **Felipe:** Estruturação dos requisitos não funcionais no arquivo  `requisitos.md`.
-* **Sara:** Contribuição mantida na Persona 1.
-* **Paula:** Contribuição mantida na Persona 2.
+* **Sara:**  Estruturação dos requisitos funcionais no arquivo  `requisitos.md`..
+* **Paula:** Estruturação da Priorização dos requisitos no arquivo  `requisitos.md`.
