@@ -3,3 +3,6 @@
 
 ## "08/09/2026"
 ### "Pesquisa, Benchmark e Personas"
+
+## "14/09/2026"
+### "Funcionalidades e requisitos"
