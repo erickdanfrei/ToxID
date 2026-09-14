@@ -61,18 +61,17 @@
 
 ## 5. Priorização
 
-
 **● Essenciais (Indispensáveis):**
 
 ○ **Modo Emergência (Triagem Visual):** Atende aos requisitos **RF01**, **RF02**, **RF03** e **RNF01**.
 
 ○ **Indicação de Soro Específico:** Atende ao requisito **RF04**.
 
-○ **Localização de Hospital de Referência:** Atende aos requisitos **RF05** e **RNF06**.
+○ **Localização do Hospital de Referência:** Atende aos requisitos **RF05** e **RNF06**.
 
 ○ **Botão de Discagem Rápida:** Atende ao requisito **RF11**.
 
-**○ Nota:** Para que essas funções essenciais operem no campo, elas dependem dos requisitos estruturais **RNF02** (offline), **RNF03** (APK 20MB), **RNF04** (alto contraste) e **RNF05** (Android 8.0+).
+**○ Nota:** Para que essas funções essenciais operem em campo, elas dependem dos requisitos estruturais **RNF02** (offline), **RNF03** (APK 20 MB), **RNF04** (alto contraste) e **RNF05** (Android 8.0+).
 
 **● Importantes (Agregam valor):**
 
@@ -83,6 +82,8 @@
 **● Secundárias (Podem ser desenvolvidas depois):**
 
 ○ **Busca e Filtros Dinâmicos:** Atende ao requisito **RF07**.
+
+○ **Detalhamento Taxonômico (Modo Técnico):** Atende ao requisito **RF10**.
 
 ○ **Detalhamento Taxonômico (Modo Técnico):** Atende ao requisito **RF10**.
 
