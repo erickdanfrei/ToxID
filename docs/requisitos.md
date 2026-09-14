@@ -61,6 +61,7 @@
 
 ## 5. Priorização
 
+
 **● Essenciais (Indispensáveis):**
 
 ○ **Modo Emergência (Triagem Visual):** Atende aos requisitos **RF01**, **RF02**, **RF03** e **RNF01**.
@@ -85,7 +86,6 @@
 
 ○ **Detalhamento Taxonômico (Modo Técnico):** Atende ao requisito **RF10**.
 
-○ **Detalhamento Taxonômico (Modo Técnico):** Atende ao requisito **RF10**.
 
   
  
