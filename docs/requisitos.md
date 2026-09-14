@@ -43,29 +43,29 @@
    * **Justificativa:** Reduz o atrito e o tempo de resposta em cenários de extremo estresse.
   
 ## 2. Requisitos Funcionais
-**●	RF01:** O sistema deve fornecer um botão de acesso rápido ao "Modo Emergência" na tela inicial.
-
-**●	RF02:** O sistema deve apresentar um fluxo de perguntas com imagens lado a lado no Modo Emergência.
-
-**●	RF03:** O sistema deve identificar o animal ao final das respostas da árvore de decisão.
-
-**●	RF04:** O sistema deve exibir, em destaque, o nome do soro antiveneno específico correspondente à espécie.
-
-**●	RF05:** O sistema deve listar os hospitais de referência mais próximos utilizando a localização temporária do dispositivo.
-
-**●	RF06:** O sistema deve conter um catálogo visual pesquisável de animais peçonhentos.
-
-**●	RF07:** O sistema deve permitir o filtro de animais por características físicas (cor, forma) e região.
-
-**●	RF08:** O sistema deve exibir instruções visuais de primeiros socorros ao finalizar o diagnóstico.
-
-**●	RF09:** O sistema deve exibir alertas vermelhos sobre procedimentos contraindicados em acidentes.
-
-**●	RF10:** O sistema deve incluir o nome científico e taxonomia na página de detalhes de cada espécie.
-
-**●	RF11:** O sistema deve permitir a discagem direta para a emergência via protocolo tel:.
-
-**●	RF12:** O sistema deve carregar todas as imagens do catálogo a partir do armazenamento local (assets).
+  **●	RF01:** O sistema deve fornecer um botão de acesso rápido ao "Modo Emergência" na tela inicial.
+  
+  **●	RF02:** O sistema deve apresentar um fluxo de perguntas com imagens lado a lado no Modo Emergência.
+  
+  **●	RF03:** O sistema deve identificar o animal ao final das respostas da árvore de decisão.
+  
+  **●	RF04:** O sistema deve exibir, em destaque, o nome do soro antiveneno específico correspondente à espécie.
+  
+  **●	RF05:** O sistema deve listar os hospitais de referência mais próximos utilizando a localização temporária do dispositivo.
+  
+  **●	RF06:** O sistema deve conter um catálogo visual pesquisável de animais peçonhentos.
+  
+  **●	RF07:** O sistema deve permitir o filtro de animais por características físicas (cor, forma) e região.
+  
+  **●	RF08:** O sistema deve exibir instruções visuais de primeiros socorros ao finalizar o diagnóstico.
+  
+  **●	RF09:** O sistema deve exibir alertas vermelhos sobre procedimentos contraindicados em acidentes.
+  
+  **●	RF10:** O sistema deve incluir o nome científico e taxonomia na página de detalhes de cada espécie.
+  
+  **●	RF11:** O sistema deve permitir a discagem direta para a emergência via protocolo tel:.
+  
+  **●	RF12:** O sistema deve carregar todas as imagens do catálogo a partir do armazenamento local (assets).
 
 
 ## 3. Requisitos Não Funcionais
