@@ -56,3 +56,35 @@
 
 * **RNF06 Segurança e Privacidade**: O uso da geolocalização deve ser estritamente temporário e não armazenado em banco de dados, respeitando a LGPD.
 
+
+  
+
+## 5. Priorização
+
+
+**● Essenciais (Indispensáveis):**
+
+○ **Modo Emergência (Triagem Visual):** Atende aos requisitos **RF01**, **RF02**, **RF03** e **RNF01**.
+
+○ **Indicação de Soro Específico:** Atende ao requisito **RF04**.
+
+○ **Localização de Hospital de Referência:** Atende aos requisitos **RF05** e **RNF06**.
+
+○ **Botão de Discagem Rápida:** Atende ao requisito **RF11**.
+
+**○ Nota:** Para que essas funções essenciais operem no campo, elas dependem dos requisitos estruturais **RNF02** (offline), **RNF03** (APK 20MB), **RNF04** (alto contraste) e **RNF05** (Android 8.0+).
+
+**● Importantes (Agregam valor):**
+
+○ **Catálogo Visual Offline:** Atende aos requisitos **RF06** e **RF12**.
+
+○ **Alerta de Primeiros Socorros (O que NÃO fazer):** Atende aos requisitos **RF08** e **RF09**.
+
+**● Secundárias (Podem ser desenvolvidas depois):**
+
+○ **Busca e Filtros Dinâmicos:** Atende ao requisito **RF07**.
+
+○ **Detalhamento Taxonômico (Modo Técnico):** Atende ao requisito **RF10**.
+
+  
+ 
