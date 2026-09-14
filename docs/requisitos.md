@@ -41,3 +41,18 @@
    * **Descrição:** Atalho gigante para acionar serviços de emergência (SAMU/192).
    * **Necessidade:** Chamar socorro imediato sem precisar fechar o app e abrir o discador.
    * **Justificativa:** Reduz o atrito e o tempo de resposta em cenários de extremo estresse.
+
+## 3. Requisitos Não Funcionais
+
+* **RNF01 Usabilidade**: O fluxo principal de emergência deve ser concluído em, no máximo, três interações na tela.
+
+* **RNF02 Conectividade**: O aplicativo deve ser offline-first, operando todas as funções de diagnóstico sem internet.
+
+* **RNF03 Armazenamento**: O tamanho total do pacote de instalação (APK) não deve ultrapassar 20MB.
+
+* **RNF04 Acessibilidade/Interface**: A interface deve utilizar Dark Mode de alto contraste (preto e verde-musgo) para legibilidade sob sol intenso.
+
+* **RNF05 Compatibilidade**: O aplicativo deve ser executável em smartphones básicos a partir do Android 8.0.
+
+* **RNF06 Segurança e Privacidade**: O uso da geolocalização deve ser estritamente temporário e não armazenado em banco de dados, respeitando a LGPD.
+
