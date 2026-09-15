@@ -82,8 +82,15 @@
 
 * **RNF06 Segurança e Privacidade**: O uso da geolocalização deve ser estritamente temporário e não armazenado em banco de dados, respeitando a LGPD.
 
-
   
+##4 CRUD
+
+●	C (Criar): Não aplicável.
+●	R (Consultar): Consulta de dados de espécies, imagens, sintomas, antivenenos e locais de hospitais.
+●	U (Atualizar): Não aplicável.
+●	D (Excluir): Não aplicável.
+Justificativa: O ToxID é projetado como uma "bússola de sobrevivência" de consulta rápida (Read-only) para momentos de crise. O usuário final (vítimas em pânico, agricultores ou bombeiros em campo) não precisa e não deve ter permissão para criar, editar ou excluir dados médicos ou taxonômicos sensíveis diretamente pelo aplicativo.
+
 
 ## 5. Priorização
 
