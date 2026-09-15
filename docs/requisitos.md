@@ -83,7 +83,7 @@
 * **RNF06 Segurança e Privacidade**: O uso da geolocalização deve ser estritamente temporário e não armazenado em banco de dados, respeitando a LGPD.
 
   
-##4 CRUD
+##4. CRUD
 
 ●	C (Criar): Não aplicável.
 ●	R (Consultar): Consulta de dados de espécies, imagens, sintomas, antivenenos e locais de hospitais.
