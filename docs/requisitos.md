@@ -85,39 +85,42 @@
   
 ## 4. CRUD
 
-●	C (Criar): Não aplicável.
-●	R (Consultar): Consulta de dados de espécies, imagens, sintomas, antivenenos e locais de hospitais.
-●	U (Atualizar): Não aplicável.
-●	D (Excluir): Não aplicável.
-Justificativa: O ToxID é projetado como uma "bússola de sobrevivência" de consulta rápida (Read-only) para momentos de crise. O usuário final (vítimas em pânico, agricultores ou bombeiros em campo) não precisa e não deve ter permissão para criar, editar ou excluir dados médicos ou taxonômicos sensíveis diretamente pelo aplicativo.
+* 	**C (Criar):** Não aplicável.
+  
+* **R (Consultar):** Consulta de dados de espécies, imagens, sintomas, antivenenos e locais de hospitais.
+
+* **U (Atualizar):** Não aplicável.
+* **D (Excluir):** Não aplicável.
+
+**Justificativa:** O ToxID é projetado como uma "bússola de sobrevivência" de consulta rápida (Read-only) para momentos de crise. O usuário final (vítimas em pânico, agricultores ou bombeiros em campo) não precisa e não deve ter permissão para criar, editar ou excluir dados médicos ou taxonômicos sensíveis diretamente pelo aplicativo.
 
 
 ## 5. Priorização
 
 
-**● Essenciais (Indispensáveis):**
+  ### Essenciais :
 
-○ **Modo Emergência (Triagem Visual):** Atende aos requisitos **RF01**, **RF02**, **RF03** e **RNF01**.
+* **Modo Emergência (Triagem Visual):** Atende aos requisitos **RF01**, **RF02**, **RF03** e **RNF01**.
 
-○ **Indicação de Soro Específico:** Atende ao requisito **RF04**.
+* **Indicação de Soro Específico:** Atende ao requisito **RF04**.
 
-○ **Localização do Hospital de Referência:** Atende aos requisitos **RF05** e **RNF06**.
+* **Localização do Hospital de Referência:** Atende aos requisitos **RF05** e **RNF06**.
 
-○ **Botão de Discagem Rápida:** Atende ao requisito **RF11**.
+* **Botão de Discagem Rápida:** Atende ao requisito **RF11**.
 
-**○ Nota:** Para que essas funções essenciais operem em campo, elas dependem dos requisitos estruturais **RNF02** (offline), **RNF03** (APK 20 MB), **RNF04** (alto contraste) e **RNF05** (Android 8.0+).
+* ** Nota:** Para que essas funções essenciais operem em campo, elas dependem dos requisitos estruturais **RNF02** (offline), **RNF03** (APK 20 MB), **RNF04** (alto contraste) e **RNF05** (Android 8.0+).
 
-**● Importantes (Agregam valor):**
+### Importantes :
 
-○ **Catálogo Visual Offline:** Atende aos requisitos **RF06** e **RF12**.
+* **Catálogo Visual Offline:** Atende aos requisitos **RF06** e **RF12**.
 
-○ **Alerta de Primeiros Socorros (O que NÃO fazer):** Atende aos requisitos **RF08** e **RF09**.
+* **Alerta de Primeiros Socorros (O que NÃO fazer):** Atende aos requisitos **RF08** e **RF09**.
 
-**● Secundárias (Podem ser desenvolvidas depois):**
+### Secundárias :
 
-○ **Busca e Filtros Dinâmicos:** Atende ao requisito **RF07**.
+* **Busca e Filtros Dinâmicos:** Atende ao requisito **RF07**.
 
-○ **Detalhamento Taxonômico (Modo Técnico):** Atende ao requisito **RF10**.
+* **Detalhamento Taxonômico (Modo Técnico):** Atende ao requisito **RF10**.
 
 
   
