@@ -9,3 +9,8 @@
 
 ## "14/09/2026"
 ### "Funcionalidades e requisitos"
+
+
+## "22/09/2026"
+### "Começo da criação dos protótipos de baixa e alta fidelidade e Justificativas."
+
