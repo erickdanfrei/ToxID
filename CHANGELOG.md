@@ -11,6 +11,12 @@
 ### "Funcionalidades e requisitos"
 
 
-## "22/09/2026"
+## "21 e 22/09/2026"
 ### "Começo da criação dos protótipos de baixa e alta fidelidade e Justificativas."
+
+
+
+## "29/09/2026"
+### "Atualização nas justificativas e finalização dos protótipos"
+
 
