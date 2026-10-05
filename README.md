@@ -35,3 +35,11 @@ O ToxID é um aplicativo móvel (Android, Flutter) pensado para ajudar a identif
 * **Felipe:** Estruturação dos requisitos não funcionais no arquivo  `requisitos.md`.
 * **Sara:**  Estruturação dos requisitos funcionais no arquivo  `requisitos.md`..
 * **Paula:** Estruturação da Priorização dos requisitos no arquivo  `requisitos.md`.
+
+
+**Fase 4: Protótipos**
+* **Erick:** Contribuição em ideias e elaboração documental.
+* **Davi:**  Contribuição em ideias e elaboração documental.
+* **Felipe:**  Contribuição em ideias e elaboração documental.
+* **Sara:** Protótipo de alta fidelidade.
+* **Paula:** Protótipo de baixa fidelidade.
