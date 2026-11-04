@@ -48,3 +48,36 @@ O documento original do projeto diz que a geolocalização é temporária e não
 - Edição e ajustes finais no [draw.io](https://app.diagrams.net).
 
 ---
+
+## Dados de Espécies e Triagem (assets/data)
+
+*Responsável:* Davi Bomfim de Oliveira Matos
+*Data:* 03/11/2026
+
+### Como usei a IA
+
+- Pedi à IA que populasse o especies.json com os 10 animais peçonhentos mais relevantes para o Brasil (serpentes, aranhas e escorpiões), com informações extraídas do Manual de Diagnóstico e Tratamento de Acidentes por Animais Peçonhentos do Ministério da Saúde.
+- Para o triagem.json, pedi que ela construísse a árvore de decisão respeitando o limite de 3 toques (RNF01) e usando as imagens SVG já disponíveis em assets/images/.
+- Rodei o script tools/validar_dados.py para confirmar integridade (resultado: OK: 10 espécies, 3 hospitais, 5 nós de triagem, máximo de 3 toques).
+
+### Prompts que funcionaram melhor
+
+- "Popule o JSON com as espécies mais responsáveis por acidentes no Brasil segundo o SINAN. Inclua: id (slug), nome popular, nome científico, família, categoria, periculosidade, peconhenta (bool), soroSigla, soroNome, descricao, formato, imagem, cores, regioes e sintomas." Gerou o JSON no esquema correto na primeira tentativa.
+- "Monte a árvore de triagem em JSON com no máximo 3 nós de profundidade. Cada folha deve ter o campo especie apontando para o id de uma espécie existente. Cada nó e opção deve ter uma imagem em assets/images/." A IA respeitou o limite e mapeou todos os IDs corretamente.
+
+### Erros que a IA cometeu e como resolvemos
+
+| Erro | Como foi resolvido |
+|---|---|
+| A IA associou o SAB (Soro Antibotrópico) à Cascavel, que pertence ao gênero Crotalus | Corrigido para SAC (Soro Anticrotálico) — o erro mais crítico de todo o projeto, pois num contexto real poderia comprometer a vida de uma vítima |
+| A IA não diferenciou SALox (específico para aranha-marrom) de SAAr (antiarmadeira), colocando apenas SAAr para ambas | Corrigido: a aranha-marrom recebeu SALox/SAAr para indicar que o tratamento pode variar conforme disponibilidade do soro específico |
+| O soroSigla da Surucucu veio como SAB em vez de SABL (Soro Antibotrópico-Laquético) | Corrigido para SABL, específico para o gênero Lachesis |
+| A sucuri e a tarantula vieram com peconhenta: true e um soro fictício | Corrigidas para peconhenta: false e sem soro — essas espécies não são de importância médica por envenenamento |
+| A triagem da cobra não separava a Cascavel das demais no primeiro nível, o que exigia mais de 3 toques para identificá-la | Reestruturada: o segundo nó para serpente pergunta "A cauda tem chocalho?", com SIM levando direto à Cascavel (apenas 2 toques) e NÃO seguindo para as demais serpentes (até 3 toques) |
+
+### Decisões sobre os dados
+
+- *Escopo intencional de 3 categorias:* o protótipo de alta fidelidade tinha 4 categorias (Répteis, Aracnídeos, Anfíbios, Insetos), mas o código implementou apenas as 3 responsáveis por > 95% dos acidentes com envenenamento no Brasil (serpentes, aranhas, escorpiões). Anfíbios e Insetos ficaram fora do escopo desta entrega por falta de soro específico disponível na rede pública — a decisão clínica ficaria confusa sem esse dado.
+- *Dados de hospitais marcados como exemplo:* os 3 hospitais no hospitais.json têm observacao explicitando que são dados de exemplo com coordenadas aproximadas. Os telefones estão como null intencionalmente até que a equipe valide os dados reais com a SES-SE. Isso faz o botão "Ligar" não aparecer nos cards — comportamento correto enquanto os dados não forem validados.
+
+---
