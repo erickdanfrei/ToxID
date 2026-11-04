@@ -81,3 +81,24 @@ O documento original do projeto diz que a geolocalização é temporária e não
 - *Dados de hospitais marcados como exemplo:* os 3 hospitais no hospitais.json têm observacao explicitando que são dados de exemplo com coordenadas aproximadas. Os telefones estão como null intencionalmente até que a equipe valide os dados reais com a SES-SE. Isso faz o botão "Ligar" não aparecer nos cards — comportamento correto enquanto os dados não forem validados.
 
 ---
+### Como usei a IA
+
+- Passei o protótipo de alta fidelidade (Figma) e pedi que a IA implementasse as telas TriagemScreen e ResultadoScreen em Flutter seguindo o tema escuro já definido em lib/core/tema.dart.
+- Pedi revisão específica do fluxo de navegação para garantir que o botão físico "Voltar" do Android retrocedesse uma pergunta na triagem em vez de fechar a tela inteira.
+
+### Prompts que funcionaram melhor
+
+- "Implemente o PopScope na TriagemScreen para que, enquanto houver nós anteriores na pilha da triagem, o botão Voltar remova o último nó em vez de fechar a tela." Gerou o onPopInvokedWithResult correto com _trilha.removeLast().
+- "O resultado da triagem deve funcionar para o caso especie == null (animal não identificado), exibindo orientações gerais sem travar." Gerou o _NaoIdentificado widget e o tratamento condicional em toda a ResultadoScreen.
+
+### Erros que a IA cometeu e como resolvemos
+
+| Erro | Como foi resolvido |
+|---|---|
+| A IA implementou a barra de navegação inferior com 3 abas (Emergência · Catálogo · Hospitais) conforme o protótipo, mas isso gerava conflito com o Navigator baseado em rotas já existente | Optou-se por manter o Navigator.pushNamed e a HomeScreen com menu vertical — mais simples e sem quebrar o fluxo de voltar na triagem. A barra inferior ficou como débito técnico para a Sprint 2 |
+| A ResultadoScreen chamava Navigator.pushNamed para hospitais sem verificar se o contexto ainda estava montado, gerando erros assíncronos em builds rápidos | Adicionada verificação if (!context.mounted) return antes de cada Navigator.pushNamed nos callbacks assíncronos |
+| O texto "Passo N (máximo 3)" aparecia como "Passo 4 (máximo 3)" quando o usuário chegava à folha da árvore — porque o nó final ainda era contado | Corrigido: o indicador de passo usa _trilha.length que representa o nó atual, não o próximo — a folha nunca é adicionada à trilha, já que redireciona direto para a ResultadoScreen |
+
+---
+
+
