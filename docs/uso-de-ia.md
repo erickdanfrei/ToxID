@@ -107,7 +107,27 @@ O documento original do projeto diz que a geolocalização é temporária e não
 ---
 
 ## Hospitais, Localização e Primeiros Socorros
+*Responsável:* Sara Jimena Barrera Mora
+*Data:* 03/11/2026
 
+### Como usei a IA
+
+- Pedi à IA que implementasse o LocalizacaoService seguindo o RNF06 (localização temporária, sem armazenamento) e com tratamento para todos os cenários de falha: GPS desligado, permissão negada, permissão negada permanentemente, timeout e exceção genérica.
+- Para a tela de primeiros socorros, pedi que ela listasse as 6 ações recomendadas e as 6 contraindicadas com base no Manual do Ministério da Saúde.
+
+### Prompts que funcionaram melhor
+
+- "Implemente o LocalizacaoService que lê o GPS uma única vez, calcula as distâncias para cada hospital com Geolocator.distanceBetween e descarta a posição em seguida. Nunca grave latitude/longitude em variável de instância, Firestore ou SharedPreferences." A IA respeitou a restrição e usou variável local no método.
+- "Liste os 6 'O que NÃO fazer' em caso de picada de animal peçonhento, baseado no Manual de Diagnóstico e Tratamento do Ministério da Saúde." Gerou os itens corretos (torniquete, corte, sucção, aplicativos caseiros, bebida alcoólica, esperar sintomas piorarem).
+
+### Erros que a IA cometeu e como resolvemos
+
+| Erro | Como foi resolvido |
+|---|---|
+| A IA não adicionou timeLimit ao Geolocator.getCurrentPosition, fazendo o app travar se o GPS não conseguisse fixar posição | Adicionado timeLimit: Duration(seconds: 12) dentro do LocationSettings. Se o timeout for atingido, o serviço cai no catch e retorna a lista em ordem alfabética com aviso |
+| A IA colocou o botão "Ligar" para o hospital sem verificar se h.telefone != null, causando null passado ao Discador.ligar | Envolvido em if (h.telefone != null) — o botão só aparece quando o hospital tem telefone cadastrado |
+| O _semLocalizacao não ordenava os hospitais, deixando a lista em ordem aleatória quando o GPS falhava | Adicionada ordenação alfabética (a.hospital.nome.compareTo(b.hospital.nome)) no fallback |
+| A tela SocorrosScreen não tinha o botão do Disque-Intoxicação (0800 722 6001), que é o serviço de apoio complementar ao SAMU | Botão OutlinedButton com Discador.ligar(context, '08007226001') adicionado ao final da lista |
 
 
 
