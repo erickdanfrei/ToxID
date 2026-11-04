@@ -81,6 +81,11 @@ O documento original do projeto diz que a geolocalização é temporária e não
 - *Dados de hospitais marcados como exemplo:* os 3 hospitais no hospitais.json têm observacao explicitando que são dados de exemplo com coordenadas aproximadas. Os telefones estão como null intencionalmente até que a equipe valide os dados reais com a SES-SE. Isso faz o botão "Ligar" não aparecer nos cards — comportamento correto enquanto os dados não forem validados.
 
 ---
+## Telas de Emergência e Resultado
+
+*Responsável:* Paula Ximena Antonio Franco
+*Data:* 03/11/2026
+
 ### Como usei a IA
 
 - Passei o protótipo de alta fidelidade (Figma) e pedi que a IA implementasse as telas TriagemScreen e ResultadoScreen em Flutter seguindo o tema escuro já definido em lib/core/tema.dart.
@@ -100,6 +105,8 @@ O documento original do projeto diz que a geolocalização é temporária e não
 | O texto "Passo N (máximo 3)" aparecia como "Passo 4 (máximo 3)" quando o usuário chegava à folha da árvore — porque o nó final ainda era contado | Corrigido: o indicador de passo usa _trilha.length que representa o nó atual, não o próximo — a folha nunca é adicionada à trilha, já que redireciona direto para a ResultadoScreen |
 
 ---
+
+## Hospitais, Localização e Primeiros Socorros
 
 
 
