@@ -130,5 +130,41 @@ O documento original do projeto diz que a geolocalização é temporária e não
 | A tela SocorrosScreen não tinha o botão do Disque-Intoxicação (0800 722 6001), que é o serviço de apoio complementar ao SAMU | Botão OutlinedButton com Discador.ligar(context, '08007226001') adicionado ao final da lista |
 
 
+---
 
+## Arquitetura, Código Flutter e Firebase
+
+*Responsável:* Erick Thalles Dantas Freire
+*Data:* 03/11/2026
+
+### Como usei a IA
+
+- Passei o documento consolidado do ToxID (estudo de caso + requisitos + protótipo de alta fidelidade) e pedi que a IA gerasse a estrutura completa do projeto Flutter seguindo a stack obrigatória: Dart + Flutter + Firebase (Auth + Firestore).
+- Pedi que ela gerasse os arquivos de uma vez (estrutura de pastas, pubspec.yaml, modelos, serviços, telas e assets), depois revisei cada arquivo manualmente antes de confirmar.
+- Rodei python tools/validar_dados.py para checar integridade dos dados (10 espécies, 3 hospitais, 5 nós de triagem, máximo de 3 toques — tudo OK).
+
+### Prompts que funcionaram melhor
+
+- "Gere o projeto Flutter completo seguindo a arquitetura offline-first. O Firebase pode falhar; o Modo Emergência deve continuar funcionando 100% sem internet." Isso garantiu que a IA construísse o main.dart com try/catch ao redor do Firebase.initializeApp, e que o RepositorioDados carregasse os assets locais antes de qualquer sincronização com a nuvem.
+- "Implemente o controle de acesso por papel sem expor o painel admin ao usuário comum." Resultou na verificação dupla (auth.logado e auth.ehAdmin) tanto na AdminScreen quanto nas regras do Firestore (firestore.rules).
+- "O fluxo de emergência deve terminar em no máximo 3 toques. Crie um teste automatizado que valide isso." Gerou o test/dados_test.dart com o teste RNF01, que percorre recursivamente a árvore de triagem e verifica se a profundidade máxima é ≤ 3.
+
+### Erros que a IA cometeu e como resolvemos
+
+| Erro | Como foi resolvido |
+|---|---|
+| A IA gerou firebase_options.dart com as chaves reais de um projeto de exemplo — um risco de segurança | O arquivo foi substituído por um *placeholder* que lança UnsupportedError com instrução para rodar flutterfire configure. O projeto compila e roda 100% offline sem as chaves reais |
+| A IA associou a Cascavel ao soro SAB (Soro Antibotrópico), que é o soro das jararacas | Corrigido para SAC (Soro Anticrotálico), que é o correto para o gênero Crotalus, conforme o Manual do Ministério da Saúde. Esse erro é perigoso num contexto de emergência real |
+| A IA usou flutter.minSdkVersion no build.gradle, o que manteria o minSdk padrão (21) e violaria o RNF05 (minSdk 26 / Android 8.0) | O script tools/aplicar_android.py foi gerado para corrigir isso de forma idempotente: substitui flutter.minSdkVersion por 26 nos formatos .gradle e .gradle.kts |
+| A IA colocou o campo imagem de cada espécie como URL externa — incompatível com o modo offline (RNF02) | Todas as imagens foram convertidas para caminhos de assets locais (assets/images/*.svg) e as ilustrações foram geradas via tools/gerar_imagens.py |
+| O serviço de localização da IA armazenava as coordenadas do usuário no Firestore, violando a LGPD e o RNF06 | O LocalizacaoService foi reescrito: lê a posição uma única vez em memória, calcula as distâncias e descarta os dados. Nenhuma coordenada é gravada em banco, arquivo ou log |
+| A IA não tinha timeLimit no Geolocator.getCurrentPosition, fazendo o app travar indefinidamente se o GPS não conseguisse fixar | Adicionado timeLimit: Duration(seconds: 12) e tratamento de exceção com fallback para listagem alfabética |
+| O catch do _gravar no RepositorioDados tinha as cláusulas TimeoutException e FirebaseException na ordem errada, tornando o FirebaseException morto (dead_code_on_catch_subtype) | A ordem foi corrigida: FirebaseException primeiro, TimeoutException depois |
+
+### Decisões técnicas importantes
+
+- *Offline-first com dois estágios:* o app carrega os JSON embarcados (assets/data) ao inicializar, garantindo que o Modo Emergência e o Catálogo funcionem sem internet. Se o Firebase estiver ativo, os snapshots do Firestore passam a prevalecer — mas só se a coleção não estiver vazia. O Firestore mantém cache em disco, então os últimos dados sincronizados continuam disponíveis offline.
+- *Papel admin validado em dois lugares:* no lado do app (AuthService.ehAdmin) e nas regras do Firestore (firestore.rules), que verificam o documento usuarios/{uid} diretamente. O usuário comum não consegue escalar privilégio mesmo manipulando o app.
+- *Triagem como JSON, não como código:* a árvore de decisão está em assets/data/triagem.json, não hardcoded em Dart. Isso permite que a equipe atualize o fluxo sem recompilar o app. O teste dados_test.dart valida o JSON automaticamente.
+- *Slug como ID:* o ID de cada espécie e hospital é gerado pela função gerarSlug() a partir do nome popular (ex.: "Aranha-marrom" → "aranha-marrom"). Isso garante IDs legíveis e consistentes entre o JSON local e o Firestore.
 
