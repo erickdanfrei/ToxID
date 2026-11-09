@@ -1,0 +1,15 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{db}/documents {
+    function admin() { return request.auth != null && request.auth.token.admin == true; }
+    match /{catalog}/{id} {
+      allow read: if catalog in ['especies', 'hospitais'];
+      allow write: if catalog in ['especies', 'hospitais'] && admin();
+    }
+    match /usuarios/{uid}/historico/{id} {
+      allow read, delete: if request.auth != null && request.auth.uid == uid;
+      allow create, update: if request.auth != null && request.auth.uid == uid
+        && request.resource.data.userId == uid && request.resource.data.id == id;
+    }
+  }
+}

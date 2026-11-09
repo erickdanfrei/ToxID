@@ -1,0 +1,47 @@
+name: toxid
+description: "ToxID - Identificação rápida de animais peçonhentos e orientação para atendimento"
+publish_to: "none"
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.6.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  flutter_map: ^8.3.2
+  latlong2: ^0.9.1
+  http: ^1.5.0
+
+  # Firebase Core & Services
+  firebase_core: ^3.15.2
+  firebase_auth: ^5.7.0
+  cloud_firestore: ^5.6.12
+
+  # Gerenciamento de Estado
+  shared_preferences: ^2.3.2
+  google_sign_in: ^6.2.1
+  firebase_analytics: ^11.6.0
+  pdf: ^3.11.1
+  printing: ^5.13.3
+  share_plus: ^10.1.4
+  provider: ^6.1.2
+
+  # Geolocalização e Chamadas Telefônicas
+  geolocator: ^11.0.0
+  url_launcher: ^6.3.0
+
+  # Utilidades de UI e Ícones
+  cupertino_icons: ^1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/data/
+    - assets/visual/
