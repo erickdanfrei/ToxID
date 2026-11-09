@@ -45,4 +45,4 @@ O ToxID é um aplicativo móvel (Android, Flutter) pensado para ajudar a identif
 * **Paula:** Protótipo de baixa fidelidade.
 
 **Fase 5: Unidade II (Modelagem e Documentação Técnica)**
-* **Felipe:** Diagrama de Casos de Uso atualizado com as regras da Unidade II (incluindo o tratamento de falhas) e Diagrama de Classes com entidades, atributos, métodos, relacionamentos e enums.  Arquivos em `docs/Diagrama_casos_de_uso e docs/Diagrama_de_classes` (Em PDF's)
+* **Felipe:** Atualização do Diagrama de Casos de Uso com as regras da Unidade II (incluindo o tratamento de falhas), criação do diagrama de Classes com entidades, atributos, métodos, relacionamentos e enums (Arquivos em `docs/Diagrama_casos_de_uso e docs/Diagrama_de_classes` em PDF) e commit da pasta `lib/services` (autenticação, espécies, hospitais, histórico com sincronização, GPS, analytics e rotas).
