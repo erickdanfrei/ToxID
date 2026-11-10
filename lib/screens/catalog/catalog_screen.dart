@@ -25,10 +25,10 @@ class _CatalogScreenState extends State<CatalogScreen> {
 
   final List<String> _categories = [
     'Todas',
-    'Reptiles',
-    'Arácnidos',
-    'Anfibios',
-    'Insectos',
+    'Répteis',
+    'Aracnídeos',
+    'Anfíbios',
+    'Insetos',
   ];
 
   @override
