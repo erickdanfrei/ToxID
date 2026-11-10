@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../theme/app_theme.dart';
+import '../../domain/species_labels.dart';
 
 /// Modal de Filtros Avançados por Nível de Perigosidade e Cores.
 /// Atende ao RF07 e reproduz o slide 9 do protótipo.
@@ -24,26 +25,27 @@ class _FilterSheetState extends State<FilterSheet> {
   late List<String> _selectedColors;
 
   final List<String> _dangerLevels = [
-    'Muy Peligrosa',
-    'Peligrosa',
-    'Bajo Peligro',
-    'No Peligrosa',
+    'Muito perigosa',
+    'Perigosa',
+    'Baixo perigo',
+    'Não perigosa',
   ];
 
   final List<String> _availableColors = [
-    'Negro',
-    'Rojizo',
-    'Amarillo',
-    'Marrón',
-    'Naranja',
-    'Blanco',
+    'Preto',
+    'Vermelho',
+    'Amarelo',
+    'Marrom',
+    'Laranja',
+    'Branco',
+    'Verde',
   ];
 
   @override
   void initState() {
     super.initState();
-    _selectedDanger = widget.initialDangerLevel;
-    _selectedColors = List.from(widget.initialColors);
+    _selectedDanger = widget.initialDangerLevel == null ? null : dangerLabel(widget.initialDangerLevel!);
+    _selectedColors = widget.initialColors.map(colorLabel).toSet().toList();
   }
 
   @override
@@ -166,7 +168,7 @@ class _FilterSheetState extends State<FilterSheet> {
 
             ElevatedButton(
               onPressed: () {
-                widget.onApply(_selectedDanger, _selectedColors);
+                widget.onApply(_selectedDanger, List<String>.from(_selectedColors));
                 Navigator.pop(context);
               },
               style: ElevatedButton.styleFrom(
