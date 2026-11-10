@@ -1,39 +1,22 @@
 import '../models/species.dart';
+import 'species_labels.dart';
 
 List<Species> searchSpecies(Iterable<Species> species, {
   String query = '', String category = 'Todas', String? dangerLevel,
   List<String> colors = const [],
 }) {
-    return species.where((sp) {
-      // Filtro de texto (busca no nome popular e científico)
-      if (query.isNotEmpty) {
-        final q = query.toLowerCase();
-        final matchPopular = sp.commonName.toLowerCase().contains(q);
-        final matchScientific = sp.scientificName.toLowerCase().contains(q);
-        if (!matchPopular && !matchScientific) return false;
-      }
-
-      // Filtro de categoria
-      if (category != 'Todas' && category.isNotEmpty) {
-        if (!sp.category.toLowerCase().contains(category.toLowerCase())) {
-          return false;
-        }
-      }
-
-      // Filtro de periculosidade
-      if (dangerLevel != null && dangerLevel.isNotEmpty) {
-        if (sp.dangerLevel.toLowerCase() != dangerLevel.toLowerCase()) {
-          return false;
-        }
-      }
-
-      // Filtro de cores (se selecionou alguma cor, a espécie deve possuir ao menos uma)
-      if (colors.isNotEmpty) {
-        final hasColorMatch = colors.any((selectedColor) => sp.colors.any(
-            (c) => c.toLowerCase().contains(selectedColor.toLowerCase())));
-        if (!hasColorMatch) return false;
-      }
-
-      return true;
-    }).toList();
+  final q = searchKey(query);
+  final categoryKey = searchKey(categoryLabel(category));
+  final dangerKey = searchKey(dangerLabel(dangerLevel ?? ''));
+  final selectedColors = colors.map((c) => searchKey(colorLabel(c))).toSet();
+  return species.where((sp) {
+    if(q.isNotEmpty && !searchKey(sp.commonName).contains(q) &&
+        !searchKey(sp.scientificName).contains(q)) return false;
+    if(categoryKey.isNotEmpty && categoryKey != 'todas' &&
+        searchKey(categoryLabel(sp.category)) != categoryKey) return false;
+    if(dangerKey.isNotEmpty && searchKey(dangerLabel(sp.dangerLevel)) != dangerKey) return false;
+    final speciesColors = sp.colors.map((c) => searchKey(colorLabel(c))).toSet();
+    if(selectedColors.isNotEmpty && !selectedColors.any(speciesColors.contains)) return false;
+    return true;
+  }).toList();
 }
