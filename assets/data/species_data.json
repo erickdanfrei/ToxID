@@ -3,13 +3,13 @@
     "id": "esp-001",
     "commonName": "Cascavel Sul-Americana",
     "scientificName": "Crotalus durissus",
-    "category": "Reptiles",
-    "dangerLevel": "Muy Peligrosa",
+    "category": "Répteis",
+    "dangerLevel": "Muito perigosa",
     "antivenom": "SAC - Soro Anticrotálico",
     "colors": [
       "Marrom",
       "Amarelo",
-      "Negro"
+      "Preto"
     ],
     "characteristics": [
       "Tiene Cascabel",
@@ -35,13 +35,13 @@
     "id": "esp-002",
     "commonName": "Jararaca / Jararacuçu",
     "scientificName": "Bothrops jararacussu",
-    "category": "Reptiles",
-    "dangerLevel": "Muy Peligrosa",
+    "category": "Répteis",
+    "dangerLevel": "Muito perigosa",
     "antivenom": "SAB - Soro Antibotrópico",
     "colors": [
       "Marrom",
-      "Negro",
-      "Amarillo"
+      "Preto",
+      "Amarelo"
     ],
     "characteristics": [
       "Tenía manchas o rombos"
@@ -64,13 +64,13 @@
     "id": "esp-003",
     "commonName": "Surucucu Pico-de-Jaca",
     "scientificName": "Lachesis muta",
-    "category": "Reptiles",
-    "dangerLevel": "Muy Peligrosa",
+    "category": "Répteis",
+    "dangerLevel": "Muito perigosa",
     "antivenom": "SABL - Soro Antibotrópico-Laquético",
     "colors": [
       "Marrom",
-      "Naranja",
-      "Negro"
+      "Laranja",
+      "Preto"
     ],
     "characteristics": [
       "Tenía manchas o rombos"
@@ -92,14 +92,14 @@
     "id": "esp-004",
     "commonName": "Coral Verdadeira",
     "scientificName": "Micrurus corallinus",
-    "category": "Reptiles",
-    "dangerLevel": "Muy Peligrosa",
+    "category": "Répteis",
+    "dangerLevel": "Muito perigosa",
     "antivenom": "SAEl - Soro Antielapídico",
     "colors": [
-      "Rojizo",
-      "Negro",
-      "Blanco",
-      "Amarillo"
+      "Vermelho",
+      "Preto",
+      "Branco",
+      "Amarelo"
     ],
     "characteristics": [
       "Tenia anillos de colores"
@@ -121,11 +121,11 @@
     "id": "esp-005",
     "commonName": "Escorpião Amarelo",
     "scientificName": "Tityus serrulatus",
-    "category": "Arácnidos",
-    "dangerLevel": "Muy Peligrosa",
+    "category": "Aracnídeos",
+    "dangerLevel": "Muito perigosa",
     "antivenom": "SAEsc - Soro Antiescorpiônico",
     "colors": [
-      "Amarillo",
+      "Amarelo",
       "Marrom"
     ],
     "characteristics": [
@@ -149,11 +149,11 @@
     "id": "esp-006",
     "commonName": "Escorpião do Nordeste",
     "scientificName": "Tityus stigmurus",
-    "category": "Arácnidos",
-    "dangerLevel": "Muy Peligrosa",
+    "category": "Aracnídeos",
+    "dangerLevel": "Muito perigosa",
     "antivenom": "SAEsc - Soro Antiescorpiônico",
     "colors": [
-      "Amarillo",
+      "Amarelo",
       "Marrom"
     ],
     "characteristics": [
@@ -175,12 +175,12 @@
     "id": "esp-007",
     "commonName": "Aranha Armadeira",
     "scientificName": "Phoneutria nigriventer",
-    "category": "Arácnidos",
-    "dangerLevel": "Muy Peligrosa",
+    "category": "Aracnídeos",
+    "dangerLevel": "Muito perigosa",
     "antivenom": "SAAr - Soro Antiaraquídico",
     "colors": [
       "Marrom",
-      "Negro"
+      "Preto"
     ],
     "characteristics": [
       "Ergue as pernas dianteiras em defesa",
@@ -202,12 +202,12 @@
     "id": "esp-008",
     "commonName": "Viúva Negra",
     "scientificName": "Latrodectus curacaviensis",
-    "category": "Arácnidos",
-    "dangerLevel": "Muy Peligrosa",
+    "category": "Aracnídeos",
+    "dangerLevel": "Muito perigosa",
     "antivenom": "SALatr - Soro Antilatrodéctico",
     "colors": [
-      "Negro",
-      "Rojizo"
+      "Preto",
+      "Vermelho"
     ],
     "characteristics": [
       "Manchas vermelhas na barriga em forma de ampulheta"
@@ -227,13 +227,13 @@
     "id": "esp-009",
     "commonName": "Lagarta Lonomia (Taturana)",
     "scientificName": "Lonomia obliqua",
-    "category": "Insectos",
-    "dangerLevel": "Muy Peligrosa",
+    "category": "Insetos",
+    "dangerLevel": "Muito perigosa",
     "antivenom": "SALon - Soro Antilonômico",
     "colors": [
       "Marrom",
       "Verde",
-      "Naranja"
+      "Laranja"
     ],
     "characteristics": [
       "Espinhos em formato de pinheiro no dorso"
@@ -255,12 +255,12 @@
     "id": "esp-010",
     "commonName": "Abelha Africanizada",
     "scientificName": "Apis mellifera scutellata",
-    "category": "Insectos",
-    "dangerLevel": "Peligrosa",
+    "category": "Insetos",
+    "dangerLevel": "Perigosa",
     "antivenom": "Tratamento Clínico / Anti-histamínico",
     "colors": [
-      "Amarillo",
-      "Negro"
+      "Amarelo",
+      "Preto"
     ],
     "characteristics": [
       "Listrada amarela e preta"
@@ -281,12 +281,12 @@
     "id": "esp-011",
     "commonName": "Sapo Cururu",
     "scientificName": "Rhinella marina",
-    "category": "Anfibios",
-    "dangerLevel": "Peligrosa",
+    "category": "Anfíbios",
+    "dangerLevel": "Perigosa",
     "antivenom": "Suporte Clínico e Lavagem",
     "colors": [
       "Marrom",
-      "Amarillo"
+      "Amarelo"
     ],
     "characteristics": [
       "Grandes glândulas paratóides atrás dos olhos"
@@ -306,12 +306,12 @@
     "id": "esp-012",
     "commonName": "Rã Flecha Dourada",
     "scientificName": "Phyllobates terribilis",
-    "category": "Anfibios",
-    "dangerLevel": "Muy Peligrosa",
+    "category": "Anfíbios",
+    "dangerLevel": "Muito perigosa",
     "antivenom": "Suporte Intensivo Imediato",
     "colors": [
-      "Amarillo",
-      "Naranja"
+      "Amarelo",
+      "Laranja"
     ],
     "characteristics": [
       "Coloração amarelo-ouro viva",
