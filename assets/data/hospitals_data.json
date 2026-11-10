@@ -1,0 +1,98 @@
+[
+  {
+    "id": "hosp-001",
+    "name": "Hospital Estadual de Urgências de Goiás Dr. Valdemiro Cruz (HUGO)",
+    "state": "Goiás",
+    "city": "Goiânia",
+    "address": "Av. 1ª Radial, s/n - St. Pedro Ludovico",
+    "phone": "(62) 3201-4300",
+    "emergencyPhone": "192",
+    "latitude": -16.7118,
+    "longitude": -49.2555,
+    "availableSerums": ["SAB", "SAC", "SAEsc", "SAAr"]
+  },
+  {
+    "id": "hosp-002",
+    "name": "HUGOL - Hospital Estadual de Urgências Gov. Otávio Lage de Siqueira",
+    "state": "Goiás",
+    "city": "Goiânia",
+    "address": "Av. Anhanguera, 14527 - Santos Dumont",
+    "phone": "(62) 3270-6300",
+    "emergencyPhone": "192",
+    "latitude": -16.6341,
+    "longitude": -49.3496,
+    "availableSerums": ["SAB", "SAC", "SABL", "SAEl", "SAEsc", "SAAr", "SALon"]
+  },
+  {
+    "id": "hosp-003",
+    "name": "Hospital das Clínicas da UFG / EBSERH",
+    "state": "Goiás",
+    "city": "Goiânia",
+    "address": "Primeira Avenida, s/n - Setor Leste Universitário",
+    "phone": "(62) 3269-8200",
+    "emergencyPhone": "192",
+    "latitude": -16.6784,
+    "longitude": -49.2435,
+    "availableSerums": ["SAB", "SAC", "SAEsc", "SAAr"]
+  },
+  {
+    "id": "hosp-004",
+    "name": "Hospital Estadual Alberto Rassi (HGG)",
+    "state": "Goiás",
+    "city": "Goiânia",
+    "address": "Av. Anhanguera, 6479 - St. Oeste",
+    "phone": "(62) 3209-9800",
+    "emergencyPhone": "192",
+    "latitude": -16.6802,
+    "longitude": -49.2731,
+    "availableSerums": ["SAB", "SAC", "SAEsc"]
+  },
+  {
+    "id": "hosp-005",
+    "name": "Hospital Vital Brazil - Instituto Butantan",
+    "state": "São Paulo",
+    "city": "São Paulo",
+    "address": "Av. Vital Brasil, 1500 - Butantã",
+    "phone": "(11) 2627-9529",
+    "emergencyPhone": "192",
+    "latitude": -23.5674,
+    "longitude": -46.7198,
+    "availableSerums": ["SAB", "SAC", "SABL", "SAEl", "SAEsc", "SAAr", "SALatr", "SALon"]
+  },
+  {
+    "id": "hosp-006",
+    "name": "Hospital João XXIII - FHEMIG (CIATox-MG)",
+    "state": "Minas Gerais",
+    "city": "Belo Horizonte",
+    "address": "Alameda Ezequiel Dias, 225 - Santa Efigênia",
+    "phone": "(31) 3239-9200",
+    "emergencyPhone": "192",
+    "latitude": -19.9248,
+    "longitude": -43.9317,
+    "availableSerums": ["SAB", "SAC", "SABL", "SAEl", "SAEsc", "SAAr", "SALon"]
+  },
+  {
+    "id": "hosp-007",
+    "name": "Hospital de Urgência de Sergipe (HUSE)",
+    "state": "Sergipe",
+    "city": "Aracaju",
+    "address": "Av. Tancredo Neves, s/n - Capucho",
+    "phone": "(79) 3216-2600",
+    "emergencyPhone": "192",
+    "latitude": -10.9416,
+    "longitude": -37.0722,
+    "availableSerums": ["SAB", "SAC", "SAEsc", "SAAr"]
+  },
+  {
+    "id": "hosp-008",
+    "name": "Hospital da Restauração Gov. Paulo Guerra",
+    "state": "Pernambuco",
+    "city": "Recife",
+    "address": "Av. Gov. Agamenon Magalhães, s/n - Derby",
+    "phone": "(81) 3181-5400",
+    "emergencyPhone": "192",
+    "latitude": -8.0558,
+    "longitude": -34.8967,
+    "availableSerums": ["SAB", "SAC", "SABL", "SAEl", "SAEsc", "SAAr"]
+  }
+]

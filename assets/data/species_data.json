@@ -1,0 +1,331 @@
+[
+  {
+    "id": "esp-001",
+    "commonName": "Cascavel Sul-Americana",
+    "scientificName": "Crotalus durissus",
+    "category": "Reptiles",
+    "dangerLevel": "Muy Peligrosa",
+    "antivenom": "SAC - Soro Anticrotálico",
+    "colors": [
+      "Marrom",
+      "Amarelo",
+      "Negro"
+    ],
+    "characteristics": [
+      "Tiene Cascabel",
+      "Tenía manchas o rombos"
+    ],
+    "description": "Serpente venenosa com chocalho córneo característico na extremidade da cauda. Veneno neurotóxico, miotóxico e coagulante.",
+    "distribution": "Cerrado, Caatinga e áreas abertas em todo o Brasil.",
+    "imageUrl": "assets/visual/esp-001.webp",
+    "firstAidDo": [
+      "Mantenha a vítima em repouso e calma para retardar a absorção do veneno",
+      "Mantenha o membro acometido elevado e imóvel",
+      "Lave o local da picada apenas com água e sabão neutro",
+      "Procure atendimento médico e hospitalar imediatamente"
+    ],
+    "firstAidDont": [
+      "NÃO faça torniquetes ou garrotes (risco de necrose e amputação)",
+      "NÃO corte ou fure o local da mordida",
+      "NÃO tente chupar ou sugar o veneno",
+      "NÃO aplique substâncias caseiras como café, folhas ou álcool"
+    ]
+  },
+  {
+    "id": "esp-002",
+    "commonName": "Jararaca / Jararacuçu",
+    "scientificName": "Bothrops jararacussu",
+    "category": "Reptiles",
+    "dangerLevel": "Muy Peligrosa",
+    "antivenom": "SAB - Soro Antibotrópico",
+    "colors": [
+      "Marrom",
+      "Negro",
+      "Amarillo"
+    ],
+    "characteristics": [
+      "Tenía manchas o rombos"
+    ],
+    "description": "Responsável pela maioria dos acidentes ofídicos no Brasil. Veneno proteolítico e hemorrágico intenso com inchaço e dor aguda.",
+    "distribution": "Mata Atlântica e áreas úmidas das regiões Sul, Sudeste e Centro-Oeste.",
+    "imageUrl": "assets/visual/esp-002.webp",
+    "firstAidDo": [
+      "Retire anéis, pulseiras e sapatos antes que a região inche",
+      "Mantenha a vítima hidratada com goles de água",
+      "Leve imediatamente a um hospital de referência"
+    ],
+    "firstAidDont": [
+      "NÃO amarre o membro picado",
+      "NÃO corte a pele no local da lesão",
+      "NÃO dê bebidas alcoólicas à vítima"
+    ]
+  },
+  {
+    "id": "esp-003",
+    "commonName": "Surucucu Pico-de-Jaca",
+    "scientificName": "Lachesis muta",
+    "category": "Reptiles",
+    "dangerLevel": "Muy Peligrosa",
+    "antivenom": "SABL - Soro Antibotrópico-Laquético",
+    "colors": [
+      "Marrom",
+      "Naranja",
+      "Negro"
+    ],
+    "characteristics": [
+      "Tenía manchas o rombos"
+    ],
+    "description": "Maior serpente peçonhenta das Américas, atinge até 3 metros. Provoca quadro botrópico associado a distúrbios vagais (queda de pressão, diarreia).",
+    "distribution": "Florestas densas da Amazônia e remanescentes da Mata Atlântica.",
+    "imageUrl": "assets/visual/esp-003.webp",
+    "firstAidDo": [
+      "Lave com água e sabão",
+      "Mantenha a vítima deitada e em repouso",
+      "Encaminhe ao pronto-socorro mais próximo com suporte de soro"
+    ],
+    "firstAidDont": [
+      "NÃO aplique compressas quentes ou gelo diretamente",
+      "NÃO faça sucção nem incisões no ferimento"
+    ]
+  },
+  {
+    "id": "esp-004",
+    "commonName": "Coral Verdadeira",
+    "scientificName": "Micrurus corallinus",
+    "category": "Reptiles",
+    "dangerLevel": "Muy Peligrosa",
+    "antivenom": "SAEl - Soro Antielapídico",
+    "colors": [
+      "Rojizo",
+      "Negro",
+      "Blanco",
+      "Amarillo"
+    ],
+    "characteristics": [
+      "Tenia anillos de colores"
+    ],
+    "description": "Padrão de anéis coloridos vermelhos, pretos e brancos/amarelados completos. Veneno neurotóxico potente com risco de parada respiratória rápida.",
+    "distribution": "Florestas tropicais, áreas rurais e matas em todo o território nacional.",
+    "imageUrl": "assets/visual/esp-004.webp",
+    "firstAidDo": [
+      "Monitorar atentamente a respiração da vítima",
+      "Transportar em posição confortável imediatamente para hospital",
+      "Se possível, fotografar o animal com segurança a distância"
+    ],
+    "firstAidDont": [
+      "NÃO tente capturar o animal se houver risco de nova picada",
+      "NÃO aplique torniquete"
+    ]
+  },
+  {
+    "id": "esp-005",
+    "commonName": "Escorpião Amarelo",
+    "scientificName": "Tityus serrulatus",
+    "category": "Arácnidos",
+    "dangerLevel": "Muy Peligrosa",
+    "antivenom": "SAEsc - Soro Antiescorpiônico",
+    "colors": [
+      "Amarillo",
+      "Marrom"
+    ],
+    "characteristics": [
+      "Era de un solo color",
+      "Tronco escuro e pernas amarelas"
+    ],
+    "description": "Espécie de escorpião mais perigosa da América do Sul. Reprodução partenogenética. Causa dor lancinante e risco de edema pulmonar agudo em crianças.",
+    "distribution": "Urbana e rural no Sudeste, Nordeste e Centro-Oeste do Brasil.",
+    "imageUrl": "assets/visual/esp-005.webp",
+    "firstAidDo": [
+      "Aplicar compressas mornas no local da picada para alívio da dor intensa",
+      "Dar analgésico comum (se a vítima puder engolir)",
+      "Levar rapidamente a um hospital de referência para soro"
+    ],
+    "firstAidDont": [
+      "NÃO passe álcool, pomadas ou querosene",
+      "NÃO faça torniquete"
+    ]
+  },
+  {
+    "id": "esp-006",
+    "commonName": "Escorpião do Nordeste",
+    "scientificName": "Tityus stigmurus",
+    "category": "Arácnidos",
+    "dangerLevel": "Muy Peligrosa",
+    "antivenom": "SAEsc - Soro Antiescorpiônico",
+    "colors": [
+      "Amarillo",
+      "Marrom"
+    ],
+    "characteristics": [
+      "Faixa escura triangular dorsal"
+    ],
+    "description": "Corpo amarelo-claro com triângulo escuro no cefalotórax e listra dorsal mediana. Alta incidência em estados do Nordeste.",
+    "distribution": "Região Nordeste do Brasil.",
+    "imageUrl": "assets/visual/esp-006.webp",
+    "firstAidDo": [
+      "Compressa morna no local para amenizar a dor",
+      "Atendimento médico imediato"
+    ],
+    "firstAidDont": [
+      "NÃO amarrar a perna ou braço",
+      "NÃO fazer incisões"
+    ]
+  },
+  {
+    "id": "esp-007",
+    "commonName": "Aranha Armadeira",
+    "scientificName": "Phoneutria nigriventer",
+    "category": "Arácnidos",
+    "dangerLevel": "Muy Peligrosa",
+    "antivenom": "SAAr - Soro Antiaraquídico",
+    "colors": [
+      "Marrom",
+      "Negro"
+    ],
+    "characteristics": [
+      "Ergue as pernas dianteiras em defesa",
+      "Tenía manchas o rombos"
+    ],
+    "description": "Aranha agressiva que se apoia nas patas traseiras e levanta as dianteiras. Picada extremamente dolorosa com manifestações neurotóxicas.",
+    "distribution": "Sul, Sudeste e Centro-Oeste do Brasil em bananeiras, entulhos e residências.",
+    "imageUrl": "assets/visual/esp-007.webp",
+    "firstAidDo": [
+      "Lavar o local com água e sabão",
+      "Compressas de água morna auxiliam no alívio da dor",
+      "Buscar assistência hospitalar"
+    ],
+    "firstAidDont": [
+      "NÃO espremer ou fazer sangria no ponto da picada"
+    ]
+  },
+  {
+    "id": "esp-008",
+    "commonName": "Viúva Negra",
+    "scientificName": "Latrodectus curacaviensis",
+    "category": "Arácnidos",
+    "dangerLevel": "Muy Peligrosa",
+    "antivenom": "SALatr - Soro Antilatrodéctico",
+    "colors": [
+      "Negro",
+      "Rojizo"
+    ],
+    "characteristics": [
+      "Manchas vermelhas na barriga em forma de ampulheta"
+    ],
+    "description": "Aranha pequena, abdômen globoso preto com desenho avermelhado. Causa latrodectismo: contrações musculares, cólicas e sudorese.",
+    "distribution": "Faixa litorânea brasileira e vegetação de restinga.",
+    "imageUrl": "assets/visual/esp-008.webp",
+    "firstAidDo": [
+      "Mantenha a vítima em repouso",
+      "Procure socorro hospitalar imediato"
+    ],
+    "firstAidDont": [
+      "NÃO queime nem coloque químicos sobre a ferida"
+    ]
+  },
+  {
+    "id": "esp-009",
+    "commonName": "Lagarta Lonomia (Taturana)",
+    "scientificName": "Lonomia obliqua",
+    "category": "Insectos",
+    "dangerLevel": "Muy Peligrosa",
+    "antivenom": "SALon - Soro Antilonômico",
+    "colors": [
+      "Marrom",
+      "Verde",
+      "Naranja"
+    ],
+    "characteristics": [
+      "Espinhos em formato de pinheiro no dorso"
+    ],
+    "description": "Lagarta com cerdas ramificadas urticantes com toxinas hemorrágicas. Contato pode desencadear sangramentos gengivais, cutâneos e falência renal.",
+    "distribution": "Regiões Sul e Sudeste, em troncos de árvores frutíferas.",
+    "imageUrl": "assets/visual/esp-009.webp",
+    "firstAidDo": [
+      "Lavar a região com água fria em abundância",
+      "Se possível levar exemplar com segurança para identificação médica",
+      "Buscar hospital urgente para avaliação de coagulação"
+    ],
+    "firstAidDont": [
+      "NÃO esfregar a pele",
+      "NÃO retirar os pelos com fita adesiva de maneira agressiva"
+    ]
+  },
+  {
+    "id": "esp-010",
+    "commonName": "Abelha Africanizada",
+    "scientificName": "Apis mellifera scutellata",
+    "category": "Insectos",
+    "dangerLevel": "Peligrosa",
+    "antivenom": "Tratamento Clínico / Anti-histamínico",
+    "colors": [
+      "Amarillo",
+      "Negro"
+    ],
+    "characteristics": [
+      "Listrada amarela e preta"
+    ],
+    "description": "Comportamento defensivo vigoroso e ataque em enxame. Múltiplas ferroadas causam envenenamento sistêmico e choque anafilático.",
+    "distribution": "Presente em todo o continente americano.",
+    "imageUrl": "assets/visual/esp-010.webp",
+    "firstAidDo": [
+      "Remover os ferrões raspando com lâmina ou cartão (sem apertar a bolsa de veneno)",
+      "Aplicar gelo para amenizar edema",
+      "Em caso de falta de ar ou mais de 30 ferroadas, ir imediatamente à emergência"
+    ],
+    "firstAidDont": [
+      "NÃO aperte os ferrões com pinças para não injetar mais veneno"
+    ]
+  },
+  {
+    "id": "esp-011",
+    "commonName": "Sapo Cururu",
+    "scientificName": "Rhinella marina",
+    "category": "Anfibios",
+    "dangerLevel": "Peligrosa",
+    "antivenom": "Suporte Clínico e Lavagem",
+    "colors": [
+      "Marrom",
+      "Amarillo"
+    ],
+    "characteristics": [
+      "Grandes glândulas paratóides atrás dos olhos"
+    ],
+    "description": "Anfíbio que secreta bufotoxinas pelas glândulas paratóides quando pressionado. Veneno atua na mucosa ocular e oral.",
+    "distribution": "América do Sul e bacias hidrográficas.",
+    "imageUrl": "assets/visual/esp-011.webp",
+    "firstAidDo": [
+      "Lavar os olhos ou boca atingidos com água corrente limpa por 15 minutos",
+      "Consultar serviço médico se houver queimação ou vômitos"
+    ],
+    "firstAidDont": [
+      "NÃO esfregar os olhos com as mãos sujas da secreção"
+    ]
+  },
+  {
+    "id": "esp-012",
+    "commonName": "Rã Flecha Dourada",
+    "scientificName": "Phyllobates terribilis",
+    "category": "Anfibios",
+    "dangerLevel": "Muy Peligrosa",
+    "antivenom": "Suporte Intensivo Imediato",
+    "colors": [
+      "Amarillo",
+      "Naranja"
+    ],
+    "characteristics": [
+      "Coloração amarelo-ouro viva",
+      "Era de un solo color"
+    ],
+    "description": "Um dos animais mais venenosos do planeta. Batracotoxina alcaloide liberada pela pele que bloqueia os canais de sódio nervosos.",
+    "distribution": "Florestas tropicais úmidas.",
+    "imageUrl": "assets/visual/esp-012.webp",
+    "firstAidDo": [
+      "Lavagem copiosa imediata do local do contato",
+      "Encaminhar imediatamente ao serviço de emergência com suporte respiratório"
+    ],
+    "firstAidDont": [
+      "NÃO tocar no anfíbio sem luvas adequadas"
+    ]
+  }
+]

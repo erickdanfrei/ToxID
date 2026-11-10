@@ -1,0 +1,58 @@
+[
+  {
+    "id": "esp-003",
+    "species": "Lachesis muta",
+    "author": "Salomão Janderson Ferreira Bispo",
+    "source": "https://commons.wikimedia.org/wiki/File%3ALachesis_muta_-_Salom%C3%A3o_Janderson_Ferreira_Bispo_-_322908738.jpeg",
+    "license": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "id": "esp-004",
+    "species": "Micrurus corallinus",
+    "author": "Marcelo Resende",
+    "source": "https://commons.wikimedia.org/wiki/File%3ACobra-Coral_%28Micrurus_corallinus%29.jpg",
+    "license": "https://creativecommons.org/licenses/by-sa/2.0"
+  },
+  {
+    "id": "esp-005",
+    "species": "Tityus serrulatus",
+    "author": "Álex Henrique Nascimento dos Santos",
+    "source": "https://commons.wikimedia.org/wiki/File%3AEscorpi%C3%A3o_comendo_aranha_armadeira.jpg",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "id": "esp-006",
+    "species": "Tityus stigmurus",
+    "author": "Célio Moura Neto",
+    "source": "https://commons.wikimedia.org/wiki/File%3ATityus_stigmurus_108240026.jpg",
+    "license": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "id": "esp-007",
+    "species": "Phoneutria nigriventer",
+    "author": "Rodrigo Tetsuo Argenton",
+    "source": "https://commons.wikimedia.org/wiki/File%3AAranha_armadeira%28Phoneutria_nigriventer%29_por_Rodrigo_Tetsuo_Argenton_%281%29.jpg",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "id": "esp-009",
+    "species": "Lonomia obliqua",
+    "author": "Centro de Informações Toxicológicas de Santa Catarina",
+    "source": "https://commons.wikimedia.org/wiki/File%3ALonomia-obliqua-citsc-1.jpg",
+    "license": "Domínio público"
+  },
+  {
+    "id": "esp-010",
+    "species": "Apis mellifera scutellata",
+    "author": "gailhampshire",
+    "source": "https://commons.wikimedia.org/wiki/File%3AAfrican_Honey_Bee_-_Flickr_-_gailhampshire.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0"
+  },
+  {
+    "id": "esp-011",
+    "species": "Rhinella marina",
+    "author": "brian.gratwicke",
+    "source": "https://commons.wikimedia.org/wiki/File%3AAdult_Cane_toad.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0"
+  }
+]
