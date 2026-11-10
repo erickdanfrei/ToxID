@@ -1,11 +1,13 @@
+import '../domain/species_labels.dart';
+
 /// Modelo de domínio que representa uma Espécie de animal peçonhento.
 /// Mapeado diretamente para a coleção 'especies' no Cloud Firestore.
 class Species {
   final String id;
   final String commonName;
   final String scientificName;
-  final String category; // Reptiles, Arácnidos, Anfibios, Insectos
-  final String dangerLevel; // Muy Peligrosa, Peligrosa, Bajo Peligro, No Peligrosa
+  final String category; // Répteis, Aracnídeos, Anfíbios, Insetos
+  final String dangerLevel; // Muito perigosa, Perigosa, Baixo perigo, Não perigosa
   final String antivenom;
   final List<String> colors;
   final List<String> characteristics;
@@ -31,19 +33,17 @@ class Species {
     this.firstAidDont = const [],
   });
 
-  bool get isVeryDangerous =>
-      dangerLevel.toLowerCase().contains('muy') ||
-      dangerLevel.toLowerCase().contains('alta');
+  bool get isVeryDangerous => dangerLabel(dangerLevel) == 'Muito perigosa';
 
   Map<String, dynamic> toMap() {
     return {
       'id': id,
       'commonName': commonName,
       'scientificName': scientificName,
-      'category': category,
-      'dangerLevel': dangerLevel,
+      'category': categoryLabel(category),
+      'dangerLevel': dangerLabel(dangerLevel),
       'antivenom': antivenom,
-      'colors': colors,
+      'colors': colors.map(colorLabel).toSet().toList(),
       'characteristics': characteristics,
       'description': description,
       'distribution': distribution,
@@ -58,10 +58,10 @@ class Species {
       id: docId ?? map['id'] ?? '',
       commonName: map['commonName'] ?? '',
       scientificName: map['scientificName'] ?? '',
-      category: map['category'] ?? 'Outros',
-      dangerLevel: map['dangerLevel'] ?? 'Peligrosa',
+      category: categoryLabel(map['category'] ?? 'Outros'),
+      dangerLevel: dangerLabel(map['dangerLevel'] ?? 'Perigosa'),
       antivenom: map['antivenom'] ?? 'Suporte Médico Imediato',
-      colors: List<String>.from(map['colors'] ?? []),
+      colors: List<String>.from(map['colors'] ?? []).map(colorLabel).toSet().toList(),
       characteristics: List<String>.from(map['characteristics'] ?? []),
       description: map['description'] ?? '',
       distribution: map['distribution'] ?? '',
