@@ -1,3 +1,4 @@
+import '../../domain/species_labels.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../../theme/app_theme.dart';
@@ -45,7 +46,7 @@ class TriageFeatureScreen extends StatelessWidget {
                     ),
                     const SizedBox(height: 6),
                     Text(
-                      'Selecione o detalhe mais marcante observado para $category:',
+                      'Selecione o detalhe mais marcante observado para ${categoryLabel(category)}:',
                       style: const TextStyle(
                         fontSize: 14,
                         color: AppTheme.textMuted,
