@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../models/species.dart';
+import '../../domain/species_labels.dart';
 import '../../services/species_service.dart';
 import '../../theme/app_theme.dart';
 
@@ -26,12 +27,12 @@ class _SpeciesFormScreenState extends State<SpeciesFormScreen> {
   late TextEditingController _colorsCtrl;
   late TextEditingController _characteristicsCtrl;
 
-  String _category = 'Reptiles';
-  String _dangerLevel = 'Muy Peligrosa';
+  String _category = 'Répteis';
+  String _dangerLevel = 'Muito perigosa';
   bool _isSaving = false;
 
-  final List<String> _categories = ['Reptiles', 'Arácnidos', 'Anfibios', 'Insectos'];
-  final List<String> _dangerLevels = ['Muy Peligrosa', 'Peligrosa', 'Bajo Peligro', 'No Peligrosa'];
+  final List<String> _categories = ['Répteis', 'Aracnídeos', 'Anfíbios', 'Insetos'];
+  final List<String> _dangerLevels = ['Muito perigosa', 'Perigosa', 'Baixo perigo', 'Não perigosa'];
 
   @override
   void initState() {
@@ -43,12 +44,12 @@ class _SpeciesFormScreenState extends State<SpeciesFormScreen> {
     _descCtrl = TextEditingController(text: s?.description ?? '');
     _distCtrl = TextEditingController(text: s?.distribution ?? '');
     _imageCtrl = TextEditingController(text: s?.imageUrl ?? '');
-    _colorsCtrl = TextEditingController(text: s?.colors.join(', ') ?? '');
+    _colorsCtrl = TextEditingController(text: s?.colors.map(colorLabel).join(', ') ?? '');
     _characteristicsCtrl = TextEditingController(text: s?.characteristics.join(', ') ?? '');
 
     if (s != null) {
-      if (_categories.contains(s.category)) _category = s.category;
-      if (_dangerLevels.contains(s.dangerLevel)) _dangerLevel = s.dangerLevel;
+      if (_categories.contains(categoryLabel(s.category))) _category = categoryLabel(s.category);
+      if (_dangerLevels.contains(dangerLabel(s.dangerLevel))) _dangerLevel = dangerLabel(s.dangerLevel);
     }
   }
 
@@ -195,7 +196,7 @@ class _SpeciesFormScreenState extends State<SpeciesFormScreen> {
                   controller: _colorsCtrl,
                   decoration: const InputDecoration(
                     labelText: 'Cores (separadas por vírgula)',
-                    hintText: 'Marrom, Amarelo, Negro',
+                    hintText: 'Marrom, Amarelo, Preto',
                   ),
                 ),
                 const SizedBox(height: 14),
