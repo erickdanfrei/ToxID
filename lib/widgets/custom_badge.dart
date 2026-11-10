@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../domain/species_labels.dart';
 
 /// Badge visual para exibição do nível de periculosidade da espécie.
 class DangerBadge extends StatelessWidget {
@@ -16,12 +17,12 @@ class DangerBadge extends StatelessWidget {
     Color bgColor;
     Color textColor = Colors.white;
 
-    final lower = dangerLevel.toLowerCase();
-    if (lower.contains('muy') || lower.contains('alta')) {
+    final label = dangerLabel(dangerLevel);
+    if (label == 'Muito perigosa') {
       bgColor = const Color(0xFFC0392B);
-    } else if (lower.contains('peli')) {
+    } else if (label == 'Perigosa') {
       bgColor = const Color(0xFFD35400);
-    } else if (lower.contains('bajo') || lower.contains('baixa')) {
+    } else if (label == 'Baixo perigo') {
       bgColor = const Color(0xFF27AE60);
     } else {
       bgColor = const Color(0xFF7F8C8D);
@@ -38,7 +39,7 @@ class DangerBadge extends StatelessWidget {
         border: Border.all(color: bgColor, width: 1),
       ),
       child: Text(
-        dangerLevel,
+        label,
         style: TextStyle(
           color: textColor,
           fontSize: isSmall ? 10 : 12,
