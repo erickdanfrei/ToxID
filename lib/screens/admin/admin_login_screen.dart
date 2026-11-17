@@ -21,8 +21,9 @@ class _LoginState extends State<AdminLoginScreen> {
     if (ok && auth.isAdmin) {
       Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => const AdminPanelScreen()));
     } else {
-      setState(() => message = ok ? 'Conta conectada para sincronizar seu histórico.' :
-          'Não foi possível entrar. Confira a conexão e os dados da conta.');
+      setState(() => message = ok
+          ? 'Login realizado. Sua conta é de usuário comum; o painel administrativo exige permissão específica.'
+          : (auth.lastError ?? 'Não foi possível entrar. Confira a conexão e os dados da conta.'));
     }
   }
   @override
