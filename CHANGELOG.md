@@ -37,3 +37,6 @@
   - `hospital_route_service.dart`: rota de carro até o hospital pelo OSRM, com validação das coordenadas.
   - `nearby_hospital_service.dart`: busca de hospitais no OpenStreetMap com cache de 10 minutos. A tela de hospitais hoje usa só o cadastro do Firebase.
   - `seed_data.dart`: 12 espécies e 7 hospitais iniciais pro app funcionar offline.
+
+## "17/11/2026"
+### Polimento do código e criação do apk
