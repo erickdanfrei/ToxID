@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'dart:typed_data';
+import '../../services/species_image_cache.dart';
 import 'package:provider/provider.dart';
 import '../../models/species.dart';
 import '../../domain/species_labels.dart';
@@ -30,6 +32,29 @@ class _SpeciesFormScreenState extends State<SpeciesFormScreen> {
   String _category = 'Répteis';
   String _dangerLevel = 'Muito perigosa';
   bool _isSaving = false;
+  bool _checkingPhoto = false;
+  Uint8List? _preview;
+  String? _photoMessage;
+
+  Future<void> _testPhoto() async {
+    final url = _imageCtrl.text.trim();
+    setState(() { _checkingPhoto = true; _preview = null; _photoMessage = null; });
+    try {
+      final bytes = await SpeciesImageCache.load(url);
+      if (!mounted || _imageCtrl.text.trim() != url) return;
+      setState(() {
+        _preview = bytes;
+        _photoMessage = 'Foto disponível neste aparelho, inclusive sem internet.';
+      });
+    } catch (e) {
+      if (mounted && _imageCtrl.text.trim() == url) {
+        setState(() => _photoMessage = 'Falha ao testar a foto: $e');
+      }
+    } finally {
+      if (mounted) setState(() => _checkingPhoto = false);
+    }
+  }
+
 
   final List<String> _categories = ['Répteis', 'Aracnídeos', 'Anfíbios', 'Insetos'];
   final List<String> _dangerLevels = ['Muito perigosa', 'Perigosa', 'Baixo perigo', 'Não perigosa'];
@@ -96,9 +121,7 @@ class _SpeciesFormScreenState extends State<SpeciesFormScreen> {
       characteristics: charsList,
       description: _descCtrl.text.trim(),
       distribution: _distCtrl.text.trim(),
-      imageUrl: _imageCtrl.text.trim().isNotEmpty
-          ? _imageCtrl.text.trim()
-          : 'https://images.unsplash.com/photo-1531386151447-fd76ad50012f?auto=format&fit=crop&w=600&q=80',
+      imageUrl: _imageCtrl.text.trim(),
       firstAidDo: widget.speciesToEdit?.firstAidDo ?? [
         'Mantenha a vítima em repouso e calma',
         'Lave a região com água e sabão',
@@ -118,7 +141,12 @@ class _SpeciesFormScreenState extends State<SpeciesFormScreen> {
       ok = await service.updateSpecies(newOrUpdated);
     }
 
+    if (!mounted) return;
     setState(() => _isSaving = false);
+    if (!ok) {
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        content: Text(service.errorMessage ?? 'Não foi possível salvar.')));
+    }
 
     if (ok && mounted) {
       ScaffoldMessenger.of(context).showSnackBar(
@@ -204,7 +232,7 @@ class _SpeciesFormScreenState extends State<SpeciesFormScreen> {
                   controller: _characteristicsCtrl,
                   decoration: const InputDecoration(
                     labelText: 'Características Marcantes (para triagem)',
-                    hintText: 'Tiene Cascabel, Tenía manchas o rombos',
+                    hintText: 'Possui chocalho, manchas ou losangos',
                   ),
                 ),
                 const SizedBox(height: 14),
@@ -218,12 +246,31 @@ class _SpeciesFormScreenState extends State<SpeciesFormScreen> {
                 const SizedBox(height: 14),
                 TextFormField(
                   controller: _imageCtrl,
+                  onChanged: (_) => setState(() { _preview = null; _photoMessage = null; }),
+                  validator: (value) {
+                    final text = value?.trim() ?? '';
+                    if (text.isEmpty || text.startsWith('assets/visual/')) return null;
+                    final uri = Uri.tryParse(text);
+                    return uri != null && uri.scheme == 'https' && uri.host.isNotEmpty
+                        ? null : 'Use um link HTTPS direto para a foto.';
+                  },
                   decoration: const InputDecoration(
                     labelText: 'URL da Imagem ou Caminho Asset',
-                    hintText: 'https://... ou assets/images/...',
+                    hintText: 'https://seu-site/especies/foto.webp',
+                    helperText: 'Link direto HTTPS. Até 512 KB e 2048 px por lado.',
                   ),
                 ),
                 const SizedBox(height: 14),
+                OutlinedButton.icon(
+                  onPressed: _checkingPhoto || _isSaving ? null : _testPhoto,
+                  icon: const Icon(Icons.image_outlined),
+                  label: Text(_checkingPhoto ? 'Baixando foto...' : 'Testar link e guardar foto'),
+                ),
+                if (_photoMessage != null) Text(_photoMessage!),
+                if (_preview != null) Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 12),
+                  child: Image.memory(_preview!, height: 180, fit: BoxFit.contain),
+                ),
                 TextFormField(
                   controller: _descCtrl,
                   maxLines: 3,
