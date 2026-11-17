@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import '../models/species.dart';
+import '../services/species_image_cache.dart';
+import 'dart:typed_data';
 
 class SpeciesPhoto extends StatelessWidget {
   const SpeciesPhoto({super.key, required this.species});
@@ -20,20 +22,58 @@ class SpeciesPhoto extends StatelessWidget {
     'Phyllobates terribilis': 'esp-012',
   };
   static const groups = {
-    'reptiles': 'Reptiles', 'répteis': 'Reptiles', 'repteis': 'Reptiles',
-    'arácnidos': 'Arácnidos', 'aracnídeos': 'Arácnidos', 'aracnideos': 'Arácnidos',
-    'anfibios': 'Anfibios', 'anfíbios': 'Anfibios',
-    'insectos': 'Insectos', 'insetos': 'Insectos',
+    'reptiles': 'Reptiles',
+    'répteis': 'Reptiles',
+    'repteis': 'Reptiles',
+    'arácnidos': 'Arácnidos',
+    'aracnídeos': 'Arácnidos',
+    'aracnideos': 'Arácnidos',
+    'anfibios': 'Anfibios',
+    'anfíbios': 'Anfibios',
+    'insectos': 'Insectos',
+    'insetos': 'Insectos',
   };
-  static String normalize(String value) => value.trim().toLowerCase().replaceAll(RegExp(r'\s+'), ' ');
+  static String normalize(String value) =>
+      value.trim().toLowerCase().replaceAll(RegExp(r'\s+'), ' ');
 
   @override
   Widget build(BuildContext context) {
-    final normalized = normalize(species.scientificName);
-    final photo = {for (final entry in photos.entries) normalize(entry.key): entry.value}[normalized];
-    if (photo != null) {
-      return Image.asset('assets/visual/$photo.webp', fit: BoxFit.cover,
-          semanticLabel: species.scientificName, errorBuilder: (_, __, ___) => _illustration());
+    final url = species.imageUrl.trim();
+    if (url.startsWith('https://')) {
+      return FutureBuilder<Uint8List>(
+        future: SpeciesImageCache.load(url),
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {
+            return Image.memory(snapshot.data!,
+                fit: BoxFit.cover,
+                semanticLabel: species.commonName,
+                errorBuilder: (_, __, ___) => _fallback());
+          }
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return const Center(child: CircularProgressIndicator());
+          }
+          return _fallback();
+        },
+      );
+    }
+    if (url.startsWith('assets/visual/')) {
+      return Image.asset(url,
+          fit: BoxFit.cover,
+          semanticLabel: species.commonName,
+          errorBuilder: (_, __, ___) => _fallback());
+    }
+    return _fallback();
+  }
+
+  Widget _fallback() {
+    final name = normalize(species.scientificName);
+    for (final entry in photos.entries) {
+      if (normalize(entry.key) == name) {
+        return Image.asset('assets/visual/${entry.value}.webp',
+            fit: BoxFit.cover,
+            semanticLabel: species.commonName,
+            errorBuilder: (_, __, ___) => _illustration());
+      }
     }
     return _illustration();
   }
@@ -42,8 +82,10 @@ class SpeciesPhoto extends StatelessWidget {
     final group = groups[normalize(species.category)];
     return Column(mainAxisAlignment: MainAxisAlignment.center, children: [
       if (group != null)
-        Flexible(child: Image.asset('assets/visual/$group.webp',
-          errorBuilder: (_, __, ___) => const Icon(Icons.image_not_supported_outlined))),
+        Flexible(
+            child: Image.asset('assets/visual/$group.webp',
+                errorBuilder: (_, __, ___) =>
+                    const Icon(Icons.image_not_supported_outlined))),
       const Text('Ilustração do grupo', style: TextStyle(fontSize: 12)),
     ]);
   }

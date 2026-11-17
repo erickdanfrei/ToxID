@@ -1,3 +1,5 @@
+import 'dart:convert';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../domain/species_search.dart';
 import 'package:flutter/foundation.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -16,8 +18,7 @@ class SpeciesService extends ChangeNotifier {
   bool _isLoading = false;
   String? _errorMessage;
 
-  SpeciesService({FirebaseFirestore? firestore})
-      : _firestore = firestore {
+  SpeciesService({FirebaseFirestore? firestore}) : _firestore = firestore {
     _loadInitialData();
   }
 
@@ -30,6 +31,20 @@ class SpeciesService extends ChangeNotifier {
     notifyListeners();
 
     try {
+      final prefs = await SharedPreferences.getInstance();
+      final saved = prefs.getString('toxid_species_snapshot_v1');
+      if (saved != null) {
+        final rows = jsonDecode(saved) as List<dynamic>;
+        _speciesList = rows.map((row) {
+          final map = Map<String, dynamic>.from(row as Map);
+          return Species.fromMap(map, map['id'] as String);
+        }).toList();
+        notifyListeners();
+      }
+    } catch (e) {
+      debugPrint('Catálogo local indisponível: $e');
+    }
+    try {
       if (_firestore != null) {
         final snapshot = await _firestore!
             .collection('especies')
@@ -39,20 +54,26 @@ class SpeciesService extends ChangeNotifier {
           _speciesList = snapshot.docs.map((doc) {
             return Species.fromMap(doc.data(), doc.id);
           }).toList();
+          await _saveSnapshot();
         } else {
           // Se o banco estiver vazio pela primeira vez, popula com os dados de semente
           _speciesList = List.from(SeedData.initialSpecies);
           _seedFirestore();
         }
-      } else {
-        _speciesList = List.from(SeedData.initialSpecies);
       }
     } catch (e) {
       debugPrint('Aviso: Carregando espécies do cache/seed offline: $e');
-      _speciesList = List.from(SeedData.initialSpecies);
     } finally {
       _isLoading = false;
       notifyListeners();
+    }
+  }
+
+  Future<void> _saveSnapshot() async {
+    final prefs = await SharedPreferences.getInstance();
+    final rows = _speciesList.map((s) => {...s.toMap(), 'id': s.id}).toList();
+    if (!await prefs.setString('toxid_species_snapshot_v1', jsonEncode(rows))) {
+      throw StateError('Não foi possível salvar o catálogo neste aparelho.');
     }
   }
 
@@ -86,8 +107,11 @@ class SpeciesService extends ChangeNotifier {
     String? dangerLevel,
     List<String> colors = const [],
   }) {
-    return searchSpecies(_speciesList, query: query, category: category,
-        dangerLevel: dangerLevel, colors: colors);
+    return searchSpecies(_speciesList,
+        query: query,
+        category: category,
+        dangerLevel: dangerLevel,
+        colors: colors);
   }
 
   // ==========================================
@@ -96,7 +120,10 @@ class SpeciesService extends ChangeNotifier {
 
   /// [C] - Criar Nova Espécie
   Future<bool> createSpecies(Species species) async {
+    _errorMessage = null;
     try {
+      if (_firestore == null)
+        throw StateError('Firebase indisponível. Cadastro não enviado.');
       String newId = species.id.isNotEmpty
           ? species.id
           : 'esp-${DateTime.now().millisecondsSinceEpoch}';
@@ -110,6 +137,7 @@ class SpeciesService extends ChangeNotifier {
       }
 
       _speciesList.insert(0, newSpecies);
+      await _saveSnapshot();
       notifyListeners();
       return true;
     } catch (e) {
@@ -121,7 +149,10 @@ class SpeciesService extends ChangeNotifier {
 
   /// [U] - Atualizar Espécie Existente
   Future<bool> updateSpecies(Species updated) async {
+    _errorMessage = null;
     try {
+      if (_firestore == null)
+        throw StateError('Firebase indisponível. Cadastro não enviado.');
       if (_firestore != null) {
         await _firestore!
             .collection('especies')
@@ -132,6 +163,7 @@ class SpeciesService extends ChangeNotifier {
       final index = _speciesList.indexWhere((s) => s.id == updated.id);
       if (index != -1) {
         _speciesList[index] = updated;
+        await _saveSnapshot();
         notifyListeners();
       }
       return true;
@@ -144,12 +176,16 @@ class SpeciesService extends ChangeNotifier {
 
   /// [D] - Excluir Espécie
   Future<bool> deleteSpecies(String id) async {
+    _errorMessage = null;
     try {
+      if (_firestore == null)
+        throw StateError('Firebase indisponível. Cadastro não enviado.');
       if (_firestore != null) {
         await _firestore!.collection('especies').doc(id).delete();
       }
 
       _speciesList.removeWhere((s) => s.id == id);
+      await _saveSnapshot();
       notifyListeners();
       return true;
     } catch (e) {
