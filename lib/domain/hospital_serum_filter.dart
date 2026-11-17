@@ -20,3 +20,4 @@ List<Hospital> hospitalsWithRegisteredSerum(Iterable<Hospital> hospitals,
     return requested.isNotEmpty && requested.any(available.contains);
   }).toList();
 }
+
