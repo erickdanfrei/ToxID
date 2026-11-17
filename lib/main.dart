@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:provider/provider.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -25,11 +26,24 @@ void main() async {
     firebaseAuth = FirebaseAuth.instance;
     firestore = FirebaseFirestore.instance;
 
-    // Habilita persistência offline nativa no Firestore
-    firestore.settings = const Settings(
-      persistenceEnabled: true,
-      cacheSizeBytes: Settings.CACHE_SIZE_UNLIMITED,
-    );
+    // A persistência do Firestore Web não é habilitada com Settings.
+    // Inicialize antes da primeira consulta ao banco. O cache ajuda com
+    // dados já consultados, mas não substitui o service worker do PWA.
+    if (kIsWeb) {
+      try {
+        await firestore.enablePersistence(
+          const PersistenceSettings(synchronizeTabs: true),
+        );
+      } catch (e) {
+        // Continua online mesmo em navegador privado/sem IndexedDB.
+        debugPrint('Firestore sem persistência Web: $e');
+      }
+    } else {
+      firestore.settings = const Settings(
+        persistenceEnabled: true,
+        cacheSizeBytes: Settings.CACHE_SIZE_UNLIMITED,
+      );
+    }
   } catch (e) {
     debugPrint(
       'Aviso: Inicialização do Firebase falhou ou está operando em Modo Offline puro: $e',
