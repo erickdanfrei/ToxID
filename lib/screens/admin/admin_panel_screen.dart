@@ -28,7 +28,9 @@ class _AdminPanelScreenState extends State<AdminPanelScreen> {
   @override
   Widget build(BuildContext context) {
     final authService = Provider.of<AuthService>(context);
-    if (!authService.isAdmin) return const Scaffold(body: Center(child: Text("Acesso administrativo necessário.")));
+    if (!authService.isAdmin)
+      return const Scaffold(
+          body: Center(child: Text("Acesso administrativo necessário.")));
     final speciesService = Provider.of<SpeciesService>(context);
     final hospitalService = Provider.of<HospitalService>(context);
 
@@ -217,11 +219,12 @@ class _AdminPanelScreenState extends State<AdminPanelScreen> {
                   );
                 },
                 icon: const Icon(Icons.add, size: 18, color: Colors.white),
-                label: const Text('+ Adicionar Espécie',
+                label: const Text('Adicionar Espécie',
                     style: TextStyle(color: Colors.white, fontSize: 13)),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: AppTheme.primaryGreen,
-                  padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
                 ),
               ),
             ],
@@ -229,18 +232,38 @@ class _AdminPanelScreenState extends State<AdminPanelScreen> {
         ),
         const Divider(color: AppTheme.borderColor),
         Expanded(
-          child: SingleChildScrollView(child: SingleChildScrollView(
+          child: SingleChildScrollView(
+              child: SingleChildScrollView(
             scrollDirection: Axis.horizontal,
-            child: DataTable(columns: const [DataColumn(label: Text('Espécie')), DataColumn(label: Text('Categoria')), DataColumn(label: Text('Risco')), DataColumn(label: Text('Ações'))],
-              rows: service.speciesList.map((item) => DataRow(cells: [
-                DataCell(Text(item.commonName)), DataCell(Text(item.category)), DataCell(Text(item.dangerLevel)),
-                DataCell(Row(children: [
-                  IconButton(tooltip: 'Editar', icon: const Icon(Icons.edit), onPressed: () =>
-                    Navigator.push(context, MaterialPageRoute(builder: (_) => SpeciesFormScreen(speciesToEdit: item)))),
-                  IconButton(tooltip: 'Excluir', icon: const Icon(Icons.delete_outline),
-                    onPressed: () => _confirmDeleteSpecies(context, service, item)),
-                ])),
-              ])).toList()),
+            child: DataTable(
+                columns: const [
+                  DataColumn(label: Text('Espécie')),
+                  DataColumn(label: Text('Categoria')),
+                  DataColumn(label: Text('Risco')),
+                  DataColumn(label: Text('Ações'))
+                ],
+                rows: service.speciesList
+                    .map((item) => DataRow(cells: [
+                          DataCell(Text(item.commonName)),
+                          DataCell(Text(item.category)),
+                          DataCell(Text(item.dangerLevel)),
+                          DataCell(Row(children: [
+                            IconButton(
+                                tooltip: 'Editar',
+                                icon: const Icon(Icons.edit),
+                                onPressed: () => Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (_) => SpeciesFormScreen(
+                                            speciesToEdit: item)))),
+                            IconButton(
+                                tooltip: 'Excluir',
+                                icon: const Icon(Icons.delete_outline),
+                                onPressed: () => _confirmDeleteSpecies(
+                                    context, service, item)),
+                          ])),
+                        ]))
+                    .toList()),
           )),
         ),
       ],
@@ -273,11 +296,12 @@ class _AdminPanelScreenState extends State<AdminPanelScreen> {
                   );
                 },
                 icon: const Icon(Icons.add, size: 18, color: Colors.white),
-                label: const Text('+ Adicionar Hospital',
+                label: const Text('Adicionar Hospital',
                     style: TextStyle(color: Colors.white, fontSize: 13)),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: AppTheme.primaryGreen,
-                  padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
                 ),
               ),
             ],
@@ -285,30 +309,52 @@ class _AdminPanelScreenState extends State<AdminPanelScreen> {
         ),
         const Divider(color: AppTheme.borderColor),
         Expanded(
-          child: SingleChildScrollView(child: SingleChildScrollView(
+          child: SingleChildScrollView(
+              child: SingleChildScrollView(
             scrollDirection: Axis.horizontal,
-            child: DataTable(columns: const [DataColumn(label: Text('Hospital')), DataColumn(label: Text('Cidade')), DataColumn(label: Text('UF')), DataColumn(label: Text('Ações'))],
-              rows: service.hospitals.map((item) => DataRow(cells: [
-                DataCell(Text(item.name)), DataCell(Text(item.city)), DataCell(Text(item.state)),
-                DataCell(Row(children: [
-                  IconButton(tooltip: 'Editar', icon: const Icon(Icons.edit), onPressed: () =>
-                    Navigator.push(context, MaterialPageRoute(builder: (_) => HospitalFormScreen(hospitalToEdit: item)))),
-                  IconButton(tooltip: 'Excluir', icon: const Icon(Icons.delete_outline),
-                    onPressed: () => _confirmDeleteHospital(context, service, item)),
-                ])),
-              ])).toList()),
+            child: DataTable(
+                columns: const [
+                  DataColumn(label: Text('Hospital')),
+                  DataColumn(label: Text('Cidade')),
+                  DataColumn(label: Text('UF')),
+                  DataColumn(label: Text('Ações'))
+                ],
+                rows: service.hospitals
+                    .map((item) => DataRow(cells: [
+                          DataCell(Text(item.name)),
+                          DataCell(Text(item.city)),
+                          DataCell(Text(item.state)),
+                          DataCell(Row(children: [
+                            IconButton(
+                                tooltip: 'Editar',
+                                icon: const Icon(Icons.edit),
+                                onPressed: () => Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (_) => HospitalFormScreen(
+                                            hospitalToEdit: item)))),
+                            IconButton(
+                                tooltip: 'Excluir',
+                                icon: const Icon(Icons.delete_outline),
+                                onPressed: () => _confirmDeleteHospital(
+                                    context, service, item)),
+                          ])),
+                        ]))
+                    .toList()),
           )),
         ),
       ],
     );
   }
 
-  void _confirmDeleteSpecies(BuildContext context, SpeciesService service, Species s) {
+  void _confirmDeleteSpecies(
+      BuildContext context, SpeciesService service, Species s) {
     showDialog(
       context: context,
       builder: (ctx) => AlertDialog(
         backgroundColor: AppTheme.cardColor,
-        title: const Text('Excluir Espécie?', style: TextStyle(color: AppTheme.textLight)),
+        title: const Text('Excluir Espécie?',
+            style: TextStyle(color: AppTheme.textLight)),
         content: Text(
           'Deseja realmente remover permanentemente a espécie "${s.commonName}"?',
           style: const TextStyle(color: AppTheme.textMuted),
@@ -331,12 +377,14 @@ class _AdminPanelScreenState extends State<AdminPanelScreen> {
     );
   }
 
-  void _confirmDeleteHospital(BuildContext context, HospitalService service, Hospital h) {
+  void _confirmDeleteHospital(
+      BuildContext context, HospitalService service, Hospital h) {
     showDialog(
       context: context,
       builder: (ctx) => AlertDialog(
         backgroundColor: AppTheme.cardColor,
-        title: const Text('Excluir Hospital?', style: TextStyle(color: AppTheme.textLight)),
+        title: const Text('Excluir Hospital?',
+            style: TextStyle(color: AppTheme.textLight)),
         content: Text(
           'Deseja realmente remover o hospital "${h.name}"?',
           style: const TextStyle(color: AppTheme.textMuted),
