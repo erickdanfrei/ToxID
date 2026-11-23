@@ -1,86 +1,158 @@
-# Registro de Uso de Inteligência Artificial — ToxID
+# Declaração de uso de Inteligência Artificial generativa
 
-**Instituição:** Universidade Tiradentes (Unit)  
-**Disciplina:** Programação para Dispositivos Móveis  
-**Docente:** Layse Santos Souza  
-**Equipe:** Davi Bomfim de Oliveira, Erick Thalles Dantas Freire, Luís Felipe Carmelo da Silva, Paula Ximena Antonio Franco, Sara Jimena Barrera Mora  
-**Artefato Avaliativo:** Questão 01 - Item b (vi)  
+**Projeto:** ToxID  
+**Disciplina:** Programação para Dispositivos Móveis
 
----
+## Ferramenta utilizada
 
-## 1. Justificativa Técnica das Bibliotecas Escolhidas
+Durante o desenvolvimento do ToxID, utilizamos o **ChatGPT, da OpenAI**, como ferramenta de apoio. Seu uso incluiu explicações, sugestões, geração e revisão de trechos de código e elaboração de documentação. Como o apoio ocorreu em diferentes conversas, não mantivemos um registro completo dos modelos e versões utilizados.
 
-Conforme exigido nas diretrizes da disciplina, toda dependência externa adicionada ao projeto foi criteriosamente avaliada pela equipe para garantir leveza, compatibilidade com o ecossistema Flutter e atendimento aos requisitos não funcionais (especialmente tamanho do APK <= 20MB e operação offline):
+## Etapas e finalidades de uso
 
-| Biblioteca | Versão | Justificativa Técnica e Finalidade no ToxID |
-| :--- | :--- | :--- |
-| **`provider`** | `^6.1.2` | Gerenciamento de estado reativo, leve e recomendado oficialmente pela equipe do Flutter. Permite propagar mudanças de autenticação e dados de espécies/hospitais com mínimo boilerplate e consumo reduzido de memória. |
-| **`firebase_core`** | `^2.32.0` | Núcleo de inicialização do ecossistema Firebase no app Android/iOS/Web, obrigatório na stack da disciplina. |
-| **`firebase_auth`** | `^4.19.7` | Implementação do controle de acesso seguro para o perfil administrativo, permitindo login via e-mail/senha e Google, separando o acesso público de consulta das operações de escrita (CRUD). |
-| **`cloud_firestore`** | `^4.17.5` | Banco de dados NoSQL baseado em documentos em nuvem. Possui suporte nativo a cache offline (`persistenceEnabled: true`), permitindo que consultas continuem funcionando mesmo sem internet em regiões rurais. |
-| **`geolocator`** | `^11.0.0` | Leitura das coordenadas geográficas temporárias do dispositivo para ordenação dos hospitais mais próximos, atendendo ao RF05 e à LGPD (RNF06). |
-| **`url_launcher`** | `^6.3.0` | Acionamento direto do discador telefônico nativo via protocolo `tel:192` (SAMU) e contatos dos hospitais (RF11), sem fricção ou necessidade de o usuário memorizar o número sob estresse. |
-| **`cupertino_icons`** | `^1.0.8` | Fornece glifos visuais complementares do design system. |
+| Etapa do trabalho | Finalidade do uso da IA |
+| --- | --- |
+| Planejamento | Organizar requisitos, identificar pendências e propor uma divisão das tarefas entre os integrantes. |
+| Desenvolvimento em Flutter e Dart | Gerar e revisar trechos de código para telas, formulários, filtros, serviços e operações de cadastro, consulta, edição e exclusão. |
+| Integração com Firebase | Orientar a configuração do projeto, a autenticação e o controle de acesso de administradores, além de auxiliar no diagnóstico de falhas. |
+| Funcionamento offline | Propor e implementar alterações para persistência local de catálogos, fotos e histórico, com sincronização quando houver conexão. |
+| Interface e recursos visuais | Apoiar ajustes de layout, textos em português, apresentação de imagens e configuração do ícone do aplicativo. |
+| Mapas e localização | Auxiliar na integração do mapa, na utilização de coordenadas e na apresentação de hospitais e rotas. |
+| Correção de erros e testes | Interpretar mensagens de erro, sugerir correções e elaborar testes e roteiros de verificação. |
+| Compilação e distribuição | Orientar a configuração de Java, Gradle, Kotlin e Android SDK, a geração do APK e a análise de seu tamanho. |
+| Documentação e apresentação | Auxiliar na redação do README, nas orientações de uso, na organização de commits, no roteiro de apresentação e nesta declaração. |
 
----
+## Participação e responsabilidade da equipe
 
-## 2. Prompts Mais Eficientes Utilizados
+A IA participou da produção de conteúdo e de código; seu uso não se limitou à correção ortográfica. As decisões sobre o que incorporar ao projeto e a responsabilidade pela versão entregue pertencem à equipe.
 
-Abaixo estão registrados os prompts estruturados mais eficientes utilizados pelo grupo durante a ideação e implementação:
+As sugestões da ferramenta não constituem comprovação de funcionamento. Cada alteração incorporada deve ser compreendida e verificada pelos integrantes, com testes na versão final do aplicativo. Testes sugeridos ou gerados pela IA não devem ser apresentados como executados sem evidência de sua execução.
 
-### Prompt 1: Modelagem da Fórmula Geodésica de Haversine em Dart
-> **Prompt:**  
-> *"Atue como engenheiro de software mobile especialista em Flutter e Dart. Crie uma função pura no modelo `Hospital` que calcule a distância em quilômetros até as coordenadas atuais da vítima utilizando a fórmula esférica de Haversine, sem recorrer a APIs pagas de mapas (como Google Maps Distance Matrix). A função deve calcular também uma estimativa realista de minutos de trajeto considerando velocidade média de 50 km/h em vias rurais/urbanas e tratar valores nulos graciosamente."*  
-> **Resultado:**  
-> A IA gerou a implementação trigonométrica exata com o raio terrestre de 6.371 km, que foi integrada em `lib/models/hospital.dart` e validada por testes unitários com erro inferior a 0,5%.
+No ToxID, as informações sobre animais peçonhentos, orientações de atendimento e hospitais exigem conferência em fontes oficiais. Respostas de IA não substituem essas fontes nem confirmam disponibilidade atual de soros nas unidades de saúde.
 
-### Prompt 2: Árvore de Decisão Visual em até 3 Cliques (RNF01)
-> **Prompt:**  
-> *"Com base no requisito RNF01 do ToxID ('o fluxo principal de emergência deve ser concluído em no máximo 3 cliques'), projete uma árvore de decisão visual para triagem de acidentes ofídicos e aracnídeos brasileiros. Divida em: Passo 1 (Categoria visual: Répteis, Aracnídeos, Anfíbios, Insetos), Passo 2 (Característica marcante: chocalho, anéis coloridos, manchas em V, etc.) e Passo 3 (Resultado com soro e primeiros socorros). Estruture as telas em Flutter com Dark Mode de alto contraste e botão fixo para ligar para o SAMU 192."*  
-> **Resultado:**  
-> Gerou a estrutura exata de `TriageCategoryScreen`, `TriageFeatureScreen` e `TriageResultScreen`, garantindo que uma vítima leiga consiga identificar a jararaca ou a cascavel com apenas 2 toques e obter o soro no 3º toque.
+## Limites desta declaração
 
-### Prompt 3: Arquitetura com Fallback Offline e Resiliência
-> **Prompt:**  
-> *"Preciso de uma arquitetura no Flutter onde os serviços `SpeciesService` e `HospitalService` leiam do Cloud Firestore quando houver conectividade e credenciais configuradas, mas que tenham um fallback transparente para um dataset estático embarcado (`SeedData`) caso o app esteja rodando sem conexão com a internet ou em modo de avaliação acadêmica. Não permita que o app quebre ou dê tela vermelha caso o Firebase não esteja configurado."*  
-> **Resultado:**  
-> A IA sugeriu encapsular o acesso ao Firestore em blocos `try/catch` inteligentes e inicializar o serviço com dados de semente offline locais, garantindo conformidade rigorosa com a Regra 6 da avaliação ("O aplicativo que não compilar ou não executar no emulador/dispositivo será desconsiderado").
+Esta declaração registra o apoio do ChatGPT no desenvolvimento e na documentação do projeto. Ela não certifica que todas as funcionalidades estejam concluídas, que o aplicativo funcione integralmente offline ou que todo o código tenha sido validado.
 
----
+Antes da entrega acadêmica, os integrantes devem conferir este registro e acrescentar outras ferramentas de IA eventualmente utilizadas, informando sua finalidade e, quando conhecida, a versão ou o modelo.
 
-## 3. Erros Gerados pela IA e Como o Grupo os Solucionou
+## Registro técnico exigido pela disciplina
 
-Durante as interações com ferramentas de IA generativa, foram identificados alguns erros e incompatibilidades, solucionados criticamente pelo grupo:
+**Local deste arquivo no repositório:** `docs/uso-de-ia.md`.
 
-### Erro 1: Uso de API obsoleta do Firebase Firestore Settings
-* **Comportamento da IA:** A IA sugeriu configurar o cache offline utilizando propriedades antigas do SDK (`firestore.settings = Settings(cacheSizeBytes: ...)` misturando parâmetros deprecados no Flutter).
-* **Problema Gerado:** Avisos de compilação e risco de depreciação na versão mais recente do plugin `cloud_firestore: ^4.17.5`.
-* **Solução do Grupo:** Consultamos a documentação oficial do FlutterFire e ajustamos para a sintaxe imutável `const Settings(persistenceEnabled: true, cacheSizeBytes: Settings.CACHE_SIZE_UNLIMITED)`.
+O enunciado do Projeto da Unidade II exige o registro dos prompts mais eficientes, dos erros gerados pela IA e de como foram solucionados, além da justificativa das bibliotecas escolhidas. As seções abaixo complementam a declaração anterior.
 
-### Erro 2: Suposição de permissão de escrita irrestrita para usuários comuns (CRUD completo)
-* **Comportamento da IA:** Inicialmente, a IA sugeriu colocar botões de "+ Adicionar Animal" e edição de espécies diretamente na tela de catálogo aberta a qualquer usuário.
-* **Problema Gerado:** Violação direta da regra de negócio do estudo de caso ToxID (Seção 4: *"O ToxID é projetado como uma 'bússola de sobrevivência' de consulta rápida (Read-only)... Permitir escrita abriria risco de corrupção das informações críticas de antiveneno"*).
-* **Solução do Grupo:** Corrigimos a arquitetura para isolar todo o CRUD (Create, Update, Delete) no módulo administrativo (`lib/screens/admin/`), exigindo autenticação via Firebase Auth e claim admin, deixando o catálogo público puramente em modo de leitura (Read).
+### Prompts que orientaram o trabalho
 
-### Erro 3: Incompatibilidade de parsing de Strings para Listas nos formulários de cadastro
-* **Comportamento da IA:** Ao gerar os formulários de cadastro de espécie e hospital, a IA gerou controladores `TextEditingController` para listas (como cores e soros disponíveis) sem realizar a divisão correta por vírgulas e trim de espaços vazios antes de enviar ao Firestore.
-* **Problema Gerado:** O Firestore recebia strings únicas concatenadas em vez de `Array<String>`, quebrando as funções de filtro do catálogo e verificação de estoque de soros.
-* **Solução do Grupo:** Criamos uma rotina de sanitização:
-  ```dart
-  final list = controller.text
-      .split(',')
-      .map((item) => item.trim())
-      .where((item) => item.isNotEmpty)
-      .toList();
-  ```
-  Garantindo integridade dos dados inseridos no banco.
+Os prompts abaixo foram reformulados para reunir o contexto e os objetivos das solicitações feitas durante o desenvolvimento. Eles preservam a intenção das interações, mas não são transcrições literais. Organizamos cada um em torno de um problema concreto, das restrições do projeto e do resultado esperado.
 
----
+#### 1. Revisão do catálogo e dos filtros
 
-## 4. Conclusão sobre a Utilização de IA no Projeto
+> Analise a tela do catálogo e a lógica de filtragem das espécies no projeto Flutter enviado. Verifique se as categorias e características usadas nos filtros correspondem aos valores dos modelos e da base de dados. Padronize os textos em português e preserve o layout e as imagens existentes. Apresente as alterações necessárias e explique como testar a busca, a combinação de filtros e a opção de limpar a seleção.
 
-O uso de Inteligência Artificial Generativa atuou como um acelerador produtivo no design das interfaces, na sintetização de dados herpetológicos oficiais do Ministério da Saúde / Instituto Butantan e na geração de código boilerplate em Dart. O grupo exerceu papel ativo de curadoria, validação arquitetural e garantia da conformidade com os protótipos de alta fidelidade e regras de negócio da disciplina.
+**Objetivo:** corrigir a experiência de consulta sem reduzir o problema à tradução dos botões. O ponto principal era fazer a interface e os dados utilizarem os mesmos critérios.
 
-## Revisão de conformidade da Unidade II
+#### 2. Persistência das coordenadas dos hospitais
 
-Pedido do grupo: conferir os requisitos da avaliação, comparar o código com o protótipo e realizar as alterações. A revisão identificou administração simulada, coordenadas fixas no alerta, PDF simulado e URLs de imagens externas. As correções usam o UID e a claim do Firebase, localização opcional, pdf/printing para gerar e compartilhar um arquivo, shared_preferences para a fila persistente e WebP embarcado. O grupo deve registrar a execução dos testes e a medição real do APK na sua máquina.
+> Investigue o fluxo de edição de latitude e longitude, desde os campos do formulário até a gravação e a leitura do hospital. Verifique a conversão dos valores, a validação das coordenadas e os nomes dos campos no modelo e no Firestore. Preserve os demais dados do cadastro. Explique como confirmar que a localização continua correta depois de salvar, sair da tela e abrir o hospital novamente.
+
+**Objetivo:** acompanhar o dado durante todo o fluxo de edição, para identificar se a falha estava no formulário, no modelo ou na persistência.
+
+#### 3. Diagnóstico da compilação Android
+
+> Com base nos logs e nos arquivos de configuração fornecidos, analise em conjunto as versões de Flutter, Java, Gradle, Android Gradle Plugin, Kotlin e NDK. Identifique a causa de cada incompatibilidade e proponha uma configuração coerente para gerar o APK. Evite atualizações indiscriminadas e preserve as configurações que já funcionam. Indique os arquivos a alterar, a ordem dos comandos e os resultados que confirmam a correção.
+
+**Objetivo:** substituir tentativas isoladas por um diagnóstico do ambiente completo. Os logs posteriores de geração dos APKs permitiram confirmar o avanço daquela configuração.
+
+#### 4. Cadastro de imagens pelo administrador
+
+> Revise o cadastro de espécies para permitir que o administrador selecione uma imagem da galeria e volte a visualizá-la após fechar e reabrir o aplicativo. Considere o plano Spark do Firebase, o tamanho do APK e a necessidade de consulta offline. Compare as opções de armazenamento, explique suas limitações e proponha validação de formato e tamanho. Diferencie o salvamento no aparelho da sincronização da imagem com outros dispositivos.
+
+**Objetivo:** tratar a foto como parte do cadastro, considerando persistência, consumo de espaço e disponibilidade sem rede, além da exibição na tela.
+
+#### 5. Funcionamento sem conexão
+
+> Analise o projeto enviado e identifique quais funcionalidades dependem de internet. Proponha alterações para que o catálogo, as imagens incluídas, as informações dos hospitais e o histórico possam ser consultados sem conexão, preservando a interface existente. Explique como persistir alterações locais e sincronizá-las posteriormente sem perder registros. Separe as funções locais das que ainda exigem rede, como autenticação inicial, mapas e rotas, e apresente um roteiro de testes em modo avião.
+
+**Objetivo:** transformar o pedido de uso offline em requisitos verificáveis. Essa análise também ajudou a reconhecer que disponibilizar dados locais não equivale a oferecer mapas e rotas integralmente offline.
+
+#### 6. Preservação do visual e dos dados existentes
+
+> Compare a versão alterada com o projeto e o protótipo fornecidos. Identifique mudanças que removeram espécies, hospitais ou imagens, ou que modificaram a organização das telas sem necessidade. Preserve os recursos existentes e concentre as alterações nas funcionalidades solicitadas. Ao final, relacione o que foi mantido, o que mudou e o que precisa de conferência visual no aparelho.
+
+**Objetivo:** evitar que a implementação de uma funcionalidade prejudicasse partes que já atendiam ao projeto, especialmente o catálogo e a apresentação das informações.
+
+#### 7. Redução do tamanho do APK
+
+> Analise o relatório de tamanho do APK e identifique quais componentes mais contribuem para o tamanho final. Proponha medidas para buscar o limite de 20 MB sem remover funcionalidades essenciais ou as imagens necessárias à consulta offline. Diferencie APK universal e APK por arquitetura, indique os comandos compatíveis com o Flutter utilizado e explique como medir o resultado após cada alteração.
+
+**Objetivo:** orientar a redução de tamanho a partir de evidências. A análise e a compilação precisaram ser separadas após a tentativa de combinar opções incompatíveis no mesmo comando.
+
+#### 8. Documentação alinhada ao enunciado
+
+> Compare a documentação de uso de IA com o enunciado da disciplina. Mantenha a declaração da ferramenta utilizada, das etapas e das finalidades de uso. Acrescente os prompts relevantes, os problemas encontrados nas respostas, as correções adotadas e as justificativas das bibliotecas. Escreva de forma clara e natural, sem atribuir testes, resultados ou responsabilidades individuais que não estejam registrados.
+
+**Objetivo:** produzir um registro útil para a avaliação e para a defesa oral, mostrando tanto a contribuição da IA quanto o trabalho de análise e verificação que cabe ao grupo.
+
+O que tornou essas solicitações mais úteis foi a combinação de contexto, restrições e critérios de verificação. Informar o erro completo, os arquivos envolvidos e o comportamento esperado ajudou a obter respostas mais específicas e a perceber quando uma sugestão não resolvia o problema.
+
+### Erros e limitações das respostas da IA
+
+Nem todas as sugestões funcionaram na primeira tentativa. Algumas precisaram de ajustes após a leitura dos logs e a comparação com o comportamento esperado. A tabela reúne esses problemas e diferencia as correções confirmadas daquelas que ainda precisam ser verificadas na versão final. Quando a origem da falha não ficou clara, isso também foi registrado.
+
+| Problema identificado | Correção ou encaminhamento | Evidência e situação |
+| --- | --- | --- |
+| A primeira versão desta documentação continha somente a declaração e foi orientada para a raiz do repositório. Faltavam os itens específicos do enunciado. | Ler o PDF e complementar o arquivo com prompts, erros, soluções e justificativas, indicando `docs/uso-de-ia.md`. | Corrigido nesta revisão documental. |
+| Versões assistidas por IA apresentaram filtros em espanhol, embora a interface fosse destinada ao português. Também foi relatado que os filtros não funcionavam. | Revisar os rótulos e a lógica de comparação das categorias e características; preparar a versão com filtros em português. | A falha foi relatada com captura de tela. A equipe deve registrar o teste funcional da versão final, pois a entrega de um arquivo corrigido não prova sua execução. |
+| Após alterações, imagens de espécies deixaram de aparecer e foram substituídas por textos de ilustração. | Preservar as imagens incluídas no projeto e revisar caminhos, declaração de assets e tratamento de falha de imagens remotas. | Foram produzidas versões com restauração de fotos. É necessário conferir todas as espécies na versão entregue, inclusive sem conexão. |
+| A compilação mostrou que `species_form_screen.dart` continha uma classe `SpeciesService`, imports inválidos e nenhuma definição utilizável de `SpeciesFormScreen`. | Separar o serviço do formulário e restaurar a classe da tela, evitando copiar o conteúdo de um serviço para o arquivo da interface. | O log demonstra o problema, mas não permite determinar se ocorreu na geração, na montagem do pacote ou na aplicação manual. A correção foi preparada; esse build específico não teve confirmação posterior no histórico considerado. |
+| A orientação para reduzir o APK combinou `--analyze-size` e `--split-debug-info`, combinação recusada pelo Flutter utilizado. | Executar a análise de tamanho separadamente da compilação com símbolos externos. | O erro foi apresentado no terminal. Depois houve geração do relatório de tamanho e relato de APK com 11 MB, referentes àquela versão. |
+| A proposta de funcionamento offline não cobriu mapa de ruas e cálculo de rotas offline de Sergipe. | Separar as funcionalidades locais das dependentes de rede e explicitar a necessidade de dados cartográficos e de um motor de rotas offline. | Limitação reconhecida. Não declarar o aplicativo inteiro como 100% offline sem implementar e testar essa parte. |
+
+### Problemas de integração e ambiente investigados com apoio da IA
+
+Também usamos a ferramenta para entender problemas do ambiente e da integração entre serviços. Eles aparecem abaixo porque fizeram parte do desenvolvimento, embora não seja possível atribuí-los automaticamente ao código gerado pela IA.
+
+| Problema | Procedimento adotado | Resultado registrado |
+| --- | --- | --- |
+| Java 25 incompatível com o Gradle usado pelo projeto (`Unsupported class file major version 69`). | Localizar o JDK 17 instalado e configurar o Flutter para utilizá-lo. | `flutter doctor -v` passou a mostrar Temurin 17. |
+| Gradle, AGP e Kotlin abaixo das versões mínimas exigidas pelo Flutter instalado. | Ajustar as versões em conjunto e verificar os componentes Android necessários. | Logs posteriores registraram a geração dos APKs por arquitetura. Isso não garante compatibilidade automática após novas atualizações. |
+| Firebase não inicializado e arquivo de opções com mensagem de configuração pendente. | Configurar o projeto pelo FlutterFire e conferir a inicialização e os arquivos da plataforma Android. | Houve confirmação de funcionamento em uma etapa e novos relatos de falha em outras versões. A versão final requer verificação própria. |
+| Erros de compilação web em dependências antigas do Firebase, como `PromiseJsImpl` e `handleThenable`. | Revisar as dependências relacionadas em conjunto, usando a resolução do Pub, e tratar as incompatibilidades restantes da aplicação. | A atualização das dependências foi registrada, seguida de outro erro de API em `CardTheme`. Não equivale a comprovação de execução completa no Chrome. |
+
+### Justificativa das bibliotecas escolhidas
+
+A tabela registra o papel das bibliotecas identificadas nas versões trabalhadas do projeto. As versões exatas devem ser conferidas em `pubspec.yaml` e `pubspec.lock` da entrega final. Flutter, Dart e Firebase fazem parte da stack exigida pela disciplina; as demais escolhas apoiam funcionalidades específicas.
+
+| Biblioteca ou tecnologia | Justificativa no ToxID | Limite ou cuidado considerado |
+| --- | --- | --- |
+| Flutter e Dart | Construir telas, navegação, formulários e regras da aplicação com uma base de código comum. | Alterações de API podem exigir ajustes no código e nos plugins. |
+| `firebase_core` | Inicializar a conexão com o projeto Firebase. | Configuração correta por plataforma; sua indisponibilidade não deve bloquear a consulta local. |
+| `firebase_auth` | Autenticar usuários e obter a identidade usada no controle de acesso. | Primeiro login e revalidação dependem de rede; autenticação não substitui regras de autorização. |
+| `cloud_firestore` | Persistir e sincronizar espécies, hospitais e registros entre dispositivos. | Regras de segurança, cotas e conflitos precisam ser tratados. Cache não garante todos os dados na primeira abertura offline. |
+| `google_sign_in` | Oferecer entrada com conta Google integrada ao fluxo de autenticação. | Exige configuração de plataforma e conectividade para autenticação inicial. |
+| `provider` | Disponibilizar serviços e atualizar a interface quando o estado muda. | Evitar duplicar fontes de estado e descartar os serviços corretamente. |
+| `shared_preferences` | Persistir preferências e, na implementação local proposta, catálogos e filas serializados para reabertura sem rede. | É uma solução simples para volume pequeno; não substitui um banco transacional nem um backup. Não deve ser descrita como SQLite. |
+| `flutter_map` | Exibir o mapa interativo e os marcadores dos hospitais. | A biblioteca de visualização não fornece, por si só, mapas ou rotas offline. |
+| `latlong2` | Representar coordenadas e apoiar cálculos de distância geográfica. | Distância em linha reta não corresponde ao percurso rodoviário. |
+| `geolocator` | Consultar a localização do aparelho e apoiar a ordenação dos hospitais por proximidade. | Depende de permissão e disponibilidade do serviço de localização; pode falhar sem impedir a consulta da lista. |
+| `url_launcher` | Abrir chamadas, links e navegação em aplicativos externos. | O recurso de destino pode depender da rede telefônica, da internet ou de outro aplicativo instalado. |
+| `pdf` e `printing` | Gerar e disponibilizar relatórios em PDF. | A geração pode ser local; impressão e envio dependem do meio escolhido. |
+| `share_plus` | Abrir o compartilhamento do sistema para arquivos e informações. | Compartilhar não garante envio offline pelo aplicativo de destino. |
+| `image_picker` | Selecionar fotos da galeria no formulário de espécies, conforme a proposta de cadastro local. | Foi acrescentado à versão offline proposta; sua integração e o novo APK precisam ser testados. |
+| `firebase_analytics` | Registrar eventos de uso quando a funcionalidade estiver habilitada. | Não é necessário para a consulta offline; avaliar privacidade e necessidade dos eventos. |
+| `flutter_launcher_icons` | Gerar os recursos de ícone Android a partir da imagem escolhida. | É ferramenta de desenvolvimento; o ícone adaptativo também precisa ser conferido no aparelho. |
+| `flutter_test` e `flutter_lints` | Apoiar testes automatizados e análise de qualidade do código. | Testes só contam como executados quando há saída ou evidência correspondente. |
+
+### Validação e acompanhamento pelo grupo
+
+O histórico contém um resultado de quatro testes aprovados em `species_photos_offline_test.dart` e logs de geração de APK em versões anteriores. Esses resultados não validam automaticamente mudanças posteriores. O pacote com núcleo offline foi entregue com verificações estáticas e roteiro de testes, sem execução de Flutter ou compilação naquele ambiente.
+
+Para concluir o registro da versão apresentada, o grupo deve acrescentar:
+
+- O commit ou a versão do projeto efetivamente testada.
+- A data, o responsável e o resultado de `flutter analyze`, `flutter test` e da compilação.
+- Os resultados de login, permissões do administrador, CRUD e sincronização.
+- Os resultados em modo avião, incluindo primeira abertura, fotos e persistência após reiniciar.
+- Os problemas ainda existentes e as limitações explicadas na apresentação.
+
+A identificação dos responsáveis deve refletir o trabalho real de cada integrante e seus commits. Não foram atribuídas correções individuais sem registro que sustente essa atribuição.
