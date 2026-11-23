@@ -3,7 +3,7 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <queries><intent><action android:name="android.intent.action.VIEW"/><data android:scheme="tel"/></intent></queries>
-    <application android:label="ToxID" android:allowBackup="false">
+    <application android:icon="@mipmap/ic_launcher" android:label="ToxID" android:allowBackup="false">
         <activity android:name=".MainActivity" android:exported="true" android:launchMode="singleTop"
             android:theme="@style/LaunchTheme" android:hardwareAccelerated="true"
             android:windowSoftInputMode="adjustResize"
