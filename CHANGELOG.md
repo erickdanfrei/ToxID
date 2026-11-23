@@ -40,3 +40,6 @@
 
 ## "17/11/2026"
 ### Polimento do código e criação do apk
+
+## "23/11/2026"
+### Ajustes Finais"
