@@ -27,12 +27,13 @@ class TriageCategoryScreen extends StatelessWidget {
           children: [
             Expanded(
               child: SingleChildScrollView(
-                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     const Text(
-                      '¿Como era o animal?',
+                      'Como era o animal?',
                       style: TextStyle(
                         fontSize: 22,
                         fontWeight: FontWeight.bold,
@@ -156,7 +157,9 @@ class TriageCategoryScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Expanded(child: Image.asset('assets/visual/$categoryKey.webp', fit: BoxFit.contain)),
+            Expanded(
+                child: Image.asset('assets/visual/$categoryKey.webp',
+                    fit: BoxFit.contain)),
             const SizedBox(height: 12),
             Text(
               title,
